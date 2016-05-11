@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sažetak.hr</title>
+    <link rel="stylesheet" type="text/css" href="{% static  'skeleton/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static  'skeleton/skeleton.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static  css %}">
+    <script type="text/javascript" src="{% static script %}"></script>
+    <link rel="icon" href="{% static 'favicon.png' %}">
+</head>
+<body>
+
+<script type="text/javascript">
+    var runningElmModule = Elm.fullscreen(Elm.{{ elmfile }}, { initialData: {{ data|safe }} } );
+</script>
+
+</body>
+</html>

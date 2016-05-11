@@ -1,0 +1,8 @@
+{{ object.name }}
+{% for tag in object.tags.all %}
+    tag
+
+{% endfor %}
+{{ object.author.get_full_name }}
+{{ object.description }}
+{{ object.content }}
