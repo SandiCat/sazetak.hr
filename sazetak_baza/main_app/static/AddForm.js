@@ -13005,6 +13005,7 @@ Elm.Urls.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var postDocument = "/post_document";
    var addForm = "/add_form";
    var index = "/";
    var suggestedTags = "/suggested_tags";
@@ -13023,7 +13024,8 @@ Elm.Urls.make = function (_elm) {
                              ,docsWithTag: docsWithTag
                              ,suggestedTags: suggestedTags
                              ,index: index
-                             ,addForm: addForm};
+                             ,addForm: addForm
+                             ,postDocument: postDocument};
 };
 Elm.SharedView = Elm.SharedView || {};
 Elm.SharedView.make = function (_elm) {
@@ -13400,24 +13402,47 @@ Elm.AddForm.make = function (_elm) {
    $Css = Elm.Css.make(_elm),
    $CustomStartApp = Elm.CustomStartApp.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
    $Effects = Elm.Effects.make(_elm),
    $EffectsUtil = Elm.EffectsUtil.make(_elm),
    $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $SharedView = Elm.SharedView.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $TagSelector = Elm.TagSelector.make(_elm),
-   $Task = Elm.Task.make(_elm);
+   $Task = Elm.Task.make(_elm),
+   $Urls = Elm.Urls.make(_elm);
    var _op = {};
    var initialData = Elm.Native.Port.make(_elm).inboundSignal("initialData",
    "AddForm.InitalData",
    function (v) {
       return typeof v === "object" ? {_: {}} : _U.badPort("an object with fields ``",v);
    });
-   var view = F2(function (address,model) {    return A2($Html.div,_U.list([$Css.container]),_U.list([$SharedView.header,$Html.text("This be add form")]));});
+   var twoColumn = F2(function (label,input) {
+      return A2($Html.div,
+      _U.list([$Css.row]),
+      _U.list([A2($Html.h5,_U.list([$Css.column(2)]),_U.list([$Html.text(label)])),A2($Html.div,_U.list([$Css.column(10)]),_U.list([input]))]));
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Css.container]),
+      _U.list([$SharedView.header
+              ,A2($Html.form,
+              _U.list([$Html$Attributes.action($Urls.postDocument),$Html$Attributes.method("post"),$Html$Attributes.id("document-form")]),
+              _U.list([A2(twoColumn,"Ime:",A2($Html.input,_U.list([$Html$Attributes.type$("text"),$Html$Attributes.name("name"),$Css.fullWidth]),_U.list([])))
+                      ,A2(twoColumn,
+                      "Opis:",
+                      A2($Html.textarea,_U.list([$Html$Attributes.name("description"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
+                      ,A2(twoColumn,
+                      "Sadržaj:",
+                      A2($Html.textarea,_U.list([$Html$Attributes.name("content"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
+                      ,A2($Html.input,
+                      _U.list([$Html$Attributes.type$("submit"),$Html$Attributes.$class("button-primary"),$Html$Attributes.value("Objavi")]),
+                      _U.list([]))]))
+              ,$SharedView.footer]));
+   });
    var TagSelectorAction = function (a) {    return {ctor: "TagSelectorAction",_0: a};};
    var update = F2(function (action,model) {
       var _p0 = action;
@@ -13435,11 +13460,8 @@ Elm.AddForm.make = function (_elm) {
    var ChangeInitialData = function (a) {    return {ctor: "ChangeInitialData",_0: a};};
    var inputs = _U.list([A2($Signal.map,ChangeInitialData,initialData)]);
    var InitalData = {};
-   var Model = F3(function (a,b,c) {    return {initialData: a,documentInputs: b,tagSelector: c};});
-   var init = function () {
-      var inputs = $Dict.fromList(A2($List.map,function (s) {    return {ctor: "_Tuple2",_0: s,_1: ""};},_U.list(["name","description","content","rating"])));
-      return A3($EffectsUtil.update,function (x) {    return A3(Model,InitalData,inputs,x);},TagSelectorAction,$TagSelector.init);
-   }();
+   var Model = F2(function (a,b) {    return {initialData: a,tagSelector: b};});
+   var init = A3($EffectsUtil.update,function (x) {    return A2(Model,InitalData,x);},TagSelectorAction,$TagSelector.init);
    var init$ = function () {
       var update$ = F2(function (action,_p1) {
          var _p2 = _p1;
@@ -13461,6 +13483,7 @@ Elm.AddForm.make = function (_elm) {
                                 ,TagSelectorAction: TagSelectorAction
                                 ,update: update
                                 ,view: view
+                                ,twoColumn: twoColumn
                                 ,inputs: inputs
                                 ,init$: init$
                                 ,app: app

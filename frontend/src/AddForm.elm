@@ -13,13 +13,13 @@ import Color
 import Search
 import TagSelector
 import Dict exposing (Dict)
+import Urls
 
 
 -- MODEL
 
 type alias Model =
-    { initialData: InitalData 
-    , documentInputs: Dict String String
+    { initialData: InitalData
     , tagSelector: TagSelector.Model
     }
 
@@ -27,24 +27,10 @@ type alias InitalData = {}
 
 init: ( Model, Effects Action )
 init =
-    let
-        inputs =
-            ["name", "description", "content", "rating"]
-            |> List.map (\s -> (s, ""))
-            |> Dict.fromList
-    in
-        EffectsUtil.update
-            (\x -> Model (InitalData) inputs x)
-            TagSelectorAction
-            TagSelector.init
-
-niceName: Dict String String
-niceName =
-    [ ("name", "Ime")
-    , ("description", "Opis")
-    , ("content", "Sadržaj")
-    , ("rating", "Ocjena")
-    ]
+    EffectsUtil.update
+        (\x -> Model (InitalData) x)
+        TagSelectorAction
+        TagSelector.init
 
 
 -- UPDATE
@@ -73,11 +59,29 @@ view address model =
     Html.div
         [ Css.container ]
         [ SharedView.header
-        , List.map
-            (\())
+        , Html.form 
+            [ Att.action Urls.postDocument
+            , Att.method "post" 
+            , Att.id "document-form"
+            ]
+            [ Html.input [ Att.type' "text", Att.name "name", Css.fullWidth ] []
+                |> twoColumn "Ime:"
+            , Html.textarea [ Att.name "description", Att.form "document-form", Css.fullWidth ] []
+                |> twoColumn "Opis:"
+            , Html.textarea [ Att.name "content", Att.form "document-form", Css.fullWidth ] []
+                |> twoColumn "Sadržaj:"
+            , Html.input [ Att.type' "submit", Att.class "button-primary", Att.value "Objavi"] []
+            ] 
         , SharedView.footer
         ]
 
+
+twoColumn: String -> Html.Html -> Html.Html
+twoColumn label input  =
+    Html.div [ Css.row ]
+        [ Html.h5 [ Css.column 2 ] [ Html.text label ]
+        , Html.div [ Css.column 10] [ input ]
+        ]
 
 -- SIGNALS
 

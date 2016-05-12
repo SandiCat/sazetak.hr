@@ -34,3 +34,7 @@ index =
 addForm: String
 addForm =
     "/add_form"
+
+postDocument: String
+postDocument =
+    "/post_document"

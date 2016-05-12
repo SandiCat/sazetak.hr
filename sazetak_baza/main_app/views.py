@@ -4,6 +4,7 @@ from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from .models import Document, Tag
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -12,6 +13,11 @@ def index(request):
 
 def add_form(request):
     return elm.render_elm(request, "AddForm", "style", {"text": "Test!!!!"})
+
+
+@csrf_exempt
+def post_document(request):
+    return HttpResponse()
 
 
 def document_display(request, pk):

@@ -11811,6 +11811,7 @@ Elm.Urls.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var postDocument = "/post_document";
    var addForm = "/add_form";
    var index = "/";
    var suggestedTags = "/suggested_tags";
@@ -11829,7 +11830,8 @@ Elm.Urls.make = function (_elm) {
                              ,docsWithTag: docsWithTag
                              ,suggestedTags: suggestedTags
                              ,index: index
-                             ,addForm: addForm};
+                             ,addForm: addForm
+                             ,postDocument: postDocument};
 };
 Elm.Database = Elm.Database || {};
 Elm.Database.Tag = Elm.Database.Tag || {};
