@@ -4,6 +4,7 @@ import Html
 import Html.Attributes as Att
 import Css
 import Urls
+import List.Extra exposing (singleton)
 
 
 header: Html.Html
@@ -29,3 +30,12 @@ header =
             ]
         , Html.hr [] []
         ]
+
+footer: Html.Html
+footer =
+    ["By Sandi Dušić, Manuel Žic & Marin Sinožić"
+    , "Copyright © 2016"
+    ]
+    |> List.map (\s -> Html.text s |> singleton |> Html.p [])
+    |> (++) [ Html.hr [] [] ]
+    |> Html.footer [] 

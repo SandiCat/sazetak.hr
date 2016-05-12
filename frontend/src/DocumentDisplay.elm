@@ -61,13 +61,13 @@ view address model =
         [ SharedView.header
         , Html.div [ Css.row ] 
             [ Html.div [ Att.class "eight columns document" ] [ Markdown.toHtml model.document.content ]
-            , Document.detailView model.document 
-                |> (++) 
-                    [ Html.h4 [ Css.row ] [ Html.text model.document.name ]
-                    , Html.div [ Css.row ] [ Html.text model.document.description ]
-                    ] 
-                |> Html.div [ Css.column 4 ]
+            , Html.div [ Css.column 4 ]
+                [ Html.h4 [ Css.row ] [ Html.text model.document.name ]
+                , Html.p [ Css.row ] [ Html.text model.document.description ]
+                , Document.detailView model.document
+                ]
             ]
+        , SharedView.footer
         ]
 
 markdownOptions: Markdown.Options

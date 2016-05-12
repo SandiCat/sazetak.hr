@@ -64,6 +64,7 @@ view address model =
                 [ Html.button [ Css.fullWidth ] [ Html.text "dodaj" ] ]
             ]
         , Search.view (Signal.forwardTo address SearchAction) model.search
+        , SharedView.footer
         ]
 
 

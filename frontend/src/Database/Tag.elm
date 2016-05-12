@@ -17,6 +17,8 @@ type alias Tag =
 type Kind
     = GRADE
     | SBJCT
+    | CNTNT
+    | OTHER
     | Error
 
 decoder: Decode.Decoder Tag
@@ -32,6 +34,8 @@ decodeKind s =
     case s of
         "GRADE" -> GRADE
         "SBJCT" -> SBJCT
+        "CNTNT" -> CNTNT
+        "OTHER" -> OTHER
         _ -> Error |> Debug.log "Unknown Kind in Tag decoding"
 
 
