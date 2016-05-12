@@ -1,10 +1,11 @@
 from . import elm
 from haystack import query
 from django.core import serializers
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Document, Tag
 import json
 from django.views.decorators.csrf import csrf_exempt
+from django.core.urlresolvers import reverse
 
 
 def index(request):
@@ -17,7 +18,7 @@ def add_form(request):
 
 @csrf_exempt
 def post_document(request):
-    return HttpResponse()
+    return HttpResponseRedirect(reverse("name"))
 
 
 def document_display(request, pk):
