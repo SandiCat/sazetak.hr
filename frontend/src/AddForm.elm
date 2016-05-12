@@ -1,4 +1,4 @@
-module Index where
+module AddForm where
 
 import Effects exposing (Effects)
 import EffectsUtil
@@ -11,31 +11,47 @@ import Css
 import Material.Icons.Action
 import Color
 import Search
+import TagSelector
+import Dict exposing (Dict)
 
 
 -- MODEL
 
 type alias Model =
     { initialData: InitalData 
-    , search: Search.Model
+    , documentInputs: Dict String String
+    , tagSelector: TagSelector.Model
     }
 
-type alias InitalData =
-    { text: String }
+type alias InitalData = {}
 
 init: ( Model, Effects Action )
 init =
-    EffectsUtil.update
-        (\x -> Model (InitalData "placehold") x)
-        SearchAction
-        Search.init
+    let
+        inputs =
+            ["name", "description", "content", "rating"]
+            |> List.map (\s -> (s, ""))
+            |> Dict.fromList
+    in
+        EffectsUtil.update
+            (\x -> Model (InitalData) inputs x)
+            TagSelectorAction
+            TagSelector.init
+
+niceName: Dict String String
+niceName =
+    [ ("name", "Ime")
+    , ("description", "Opis")
+    , ("content", "Sadržaj")
+    , ("rating", "Ocjena")
+    ]
 
 
 -- UPDATE
 
 type Action
     = ChangeInitialData InitalData
-    | SearchAction Search.Action
+    | TagSelectorAction TagSelector.Action
 
 update: Action -> Model -> ( Model, Effects Action )
 update action model =
@@ -43,11 +59,11 @@ update action model =
         ChangeInitialData data ->
             { model | initialData = data }
             |> EffectsUtil.noFx
-        SearchAction action ->
-            Search.update action model.search
+        TagSelectorAction action ->
+            TagSelector.update action model.tagSelector
             |> EffectsUtil.update
-                (\x -> {model | search = x })
-                SearchAction
+                (\x -> {model | tagSelector = x })
+                TagSelectorAction
 
 
 -- VIEW
@@ -57,7 +73,8 @@ view address model =
     Html.div
         [ Css.container ]
         [ SharedView.header
-        , Search.view (Signal.forwardTo address SearchAction) model.search
+        , List.map
+            (\())
         , SharedView.footer
         ]
 

@@ -3,6 +3,11 @@
 	margin-top: 3em;
 	display: flex;
 	align-items: center; /* align vertical */
+	margin-bottom: 2em;
+}
+
+#header-line {
+	margin-top: 0;
 }
 
 #title {

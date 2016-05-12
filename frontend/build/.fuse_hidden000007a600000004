@@ -10856,6 +10856,1259 @@ Elm.Html.make = function (_elm) {
                              ,menuitem: menuitem
                              ,menu: menu};
 };
+Elm.Svg = Elm.Svg || {};
+Elm.Svg.make = function (_elm) {
+   "use strict";
+   _elm.Svg = _elm.Svg || {};
+   if (_elm.Svg.values) return _elm.Svg.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Json$Encode = Elm.Json.Encode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var _op = {};
+   var text = $VirtualDom.text;
+   var svgNamespace = A2($VirtualDom.property,"namespace",$Json$Encode.string("http://www.w3.org/2000/svg"));
+   var node = F3(function (name,attributes,children) {    return A3($VirtualDom.node,name,A2($List._op["::"],svgNamespace,attributes),children);});
+   var svg = node("svg");
+   var foreignObject = node("foreignObject");
+   var animate = node("animate");
+   var animateColor = node("animateColor");
+   var animateMotion = node("animateMotion");
+   var animateTransform = node("animateTransform");
+   var mpath = node("mpath");
+   var set = node("set");
+   var a = node("a");
+   var defs = node("defs");
+   var g = node("g");
+   var marker = node("marker");
+   var mask = node("mask");
+   var missingGlyph = node("missingGlyph");
+   var pattern = node("pattern");
+   var $switch = node("switch");
+   var symbol = node("symbol");
+   var desc = node("desc");
+   var metadata = node("metadata");
+   var title = node("title");
+   var feBlend = node("feBlend");
+   var feColorMatrix = node("feColorMatrix");
+   var feComponentTransfer = node("feComponentTransfer");
+   var feComposite = node("feComposite");
+   var feConvolveMatrix = node("feConvolveMatrix");
+   var feDiffuseLighting = node("feDiffuseLighting");
+   var feDisplacementMap = node("feDisplacementMap");
+   var feFlood = node("feFlood");
+   var feFuncA = node("feFuncA");
+   var feFuncB = node("feFuncB");
+   var feFuncG = node("feFuncG");
+   var feFuncR = node("feFuncR");
+   var feGaussianBlur = node("feGaussianBlur");
+   var feImage = node("feImage");
+   var feMerge = node("feMerge");
+   var feMergeNode = node("feMergeNode");
+   var feMorphology = node("feMorphology");
+   var feOffset = node("feOffset");
+   var feSpecularLighting = node("feSpecularLighting");
+   var feTile = node("feTile");
+   var feTurbulence = node("feTurbulence");
+   var font = node("font");
+   var fontFace = node("fontFace");
+   var fontFaceFormat = node("fontFaceFormat");
+   var fontFaceName = node("fontFaceName");
+   var fontFaceSrc = node("fontFaceSrc");
+   var fontFaceUri = node("fontFaceUri");
+   var hkern = node("hkern");
+   var vkern = node("vkern");
+   var linearGradient = node("linearGradient");
+   var radialGradient = node("radialGradient");
+   var stop = node("stop");
+   var circle = node("circle");
+   var ellipse = node("ellipse");
+   var image = node("image");
+   var line = node("line");
+   var path = node("path");
+   var polygon = node("polygon");
+   var polyline = node("polyline");
+   var rect = node("rect");
+   var use = node("use");
+   var feDistantLight = node("feDistantLight");
+   var fePointLight = node("fePointLight");
+   var feSpotLight = node("feSpotLight");
+   var altGlyph = node("altGlyph");
+   var altGlyphDef = node("altGlyphDef");
+   var altGlyphItem = node("altGlyphItem");
+   var glyph = node("glyph");
+   var glyphRef = node("glyphRef");
+   var textPath = node("textPath");
+   var text$ = node("text");
+   var tref = node("tref");
+   var tspan = node("tspan");
+   var clipPath = node("clipPath");
+   var colorProfile = node("colorProfile");
+   var cursor = node("cursor");
+   var filter = node("filter");
+   var script = node("script");
+   var style = node("style");
+   var view = node("view");
+   return _elm.Svg.values = {_op: _op
+                            ,text: text
+                            ,node: node
+                            ,svg: svg
+                            ,foreignObject: foreignObject
+                            ,circle: circle
+                            ,ellipse: ellipse
+                            ,image: image
+                            ,line: line
+                            ,path: path
+                            ,polygon: polygon
+                            ,polyline: polyline
+                            ,rect: rect
+                            ,use: use
+                            ,animate: animate
+                            ,animateColor: animateColor
+                            ,animateMotion: animateMotion
+                            ,animateTransform: animateTransform
+                            ,mpath: mpath
+                            ,set: set
+                            ,desc: desc
+                            ,metadata: metadata
+                            ,title: title
+                            ,a: a
+                            ,defs: defs
+                            ,g: g
+                            ,marker: marker
+                            ,mask: mask
+                            ,missingGlyph: missingGlyph
+                            ,pattern: pattern
+                            ,$switch: $switch
+                            ,symbol: symbol
+                            ,altGlyph: altGlyph
+                            ,altGlyphDef: altGlyphDef
+                            ,altGlyphItem: altGlyphItem
+                            ,glyph: glyph
+                            ,glyphRef: glyphRef
+                            ,textPath: textPath
+                            ,text$: text$
+                            ,tref: tref
+                            ,tspan: tspan
+                            ,font: font
+                            ,fontFace: fontFace
+                            ,fontFaceFormat: fontFaceFormat
+                            ,fontFaceName: fontFaceName
+                            ,fontFaceSrc: fontFaceSrc
+                            ,fontFaceUri: fontFaceUri
+                            ,hkern: hkern
+                            ,vkern: vkern
+                            ,linearGradient: linearGradient
+                            ,radialGradient: radialGradient
+                            ,stop: stop
+                            ,feBlend: feBlend
+                            ,feColorMatrix: feColorMatrix
+                            ,feComponentTransfer: feComponentTransfer
+                            ,feComposite: feComposite
+                            ,feConvolveMatrix: feConvolveMatrix
+                            ,feDiffuseLighting: feDiffuseLighting
+                            ,feDisplacementMap: feDisplacementMap
+                            ,feFlood: feFlood
+                            ,feFuncA: feFuncA
+                            ,feFuncB: feFuncB
+                            ,feFuncG: feFuncG
+                            ,feFuncR: feFuncR
+                            ,feGaussianBlur: feGaussianBlur
+                            ,feImage: feImage
+                            ,feMerge: feMerge
+                            ,feMergeNode: feMergeNode
+                            ,feMorphology: feMorphology
+                            ,feOffset: feOffset
+                            ,feSpecularLighting: feSpecularLighting
+                            ,feTile: feTile
+                            ,feTurbulence: feTurbulence
+                            ,feDistantLight: feDistantLight
+                            ,fePointLight: fePointLight
+                            ,feSpotLight: feSpotLight
+                            ,clipPath: clipPath
+                            ,colorProfile: colorProfile
+                            ,cursor: cursor
+                            ,filter: filter
+                            ,script: script
+                            ,style: style
+                            ,view: view};
+};
+Elm.Svg = Elm.Svg || {};
+Elm.Svg.Attributes = Elm.Svg.Attributes || {};
+Elm.Svg.Attributes.make = function (_elm) {
+   "use strict";
+   _elm.Svg = _elm.Svg || {};
+   _elm.Svg.Attributes = _elm.Svg.Attributes || {};
+   if (_elm.Svg.Attributes.values) return _elm.Svg.Attributes.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Svg = Elm.Svg.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var _op = {};
+   var writingMode = $VirtualDom.attribute("writing-mode");
+   var wordSpacing = $VirtualDom.attribute("word-spacing");
+   var visibility = $VirtualDom.attribute("visibility");
+   var unicodeBidi = $VirtualDom.attribute("unicode-bidi");
+   var textRendering = $VirtualDom.attribute("text-rendering");
+   var textDecoration = $VirtualDom.attribute("text-decoration");
+   var textAnchor = $VirtualDom.attribute("text-anchor");
+   var stroke = $VirtualDom.attribute("stroke");
+   var strokeWidth = $VirtualDom.attribute("stroke-width");
+   var strokeOpacity = $VirtualDom.attribute("stroke-opacity");
+   var strokeMiterlimit = $VirtualDom.attribute("stroke-miterlimit");
+   var strokeLinejoin = $VirtualDom.attribute("stroke-linejoin");
+   var strokeLinecap = $VirtualDom.attribute("stroke-linecap");
+   var strokeDashoffset = $VirtualDom.attribute("stroke-dashoffset");
+   var strokeDasharray = $VirtualDom.attribute("stroke-dasharray");
+   var stopOpacity = $VirtualDom.attribute("stop-opacity");
+   var stopColor = $VirtualDom.attribute("stop-color");
+   var shapeRendering = $VirtualDom.attribute("shape-rendering");
+   var pointerEvents = $VirtualDom.attribute("pointer-events");
+   var overflow = $VirtualDom.attribute("overflow");
+   var opacity = $VirtualDom.attribute("opacity");
+   var mask = $VirtualDom.attribute("mask");
+   var markerStart = $VirtualDom.attribute("marker-start");
+   var markerMid = $VirtualDom.attribute("marker-mid");
+   var markerEnd = $VirtualDom.attribute("marker-end");
+   var lightingColor = $VirtualDom.attribute("lighting-color");
+   var letterSpacing = $VirtualDom.attribute("letter-spacing");
+   var kerning = $VirtualDom.attribute("kerning");
+   var imageRendering = $VirtualDom.attribute("image-rendering");
+   var glyphOrientationVertical = $VirtualDom.attribute("glyph-orientation-vertical");
+   var glyphOrientationHorizontal = $VirtualDom.attribute("glyph-orientation-horizontal");
+   var fontWeight = $VirtualDom.attribute("font-weight");
+   var fontVariant = $VirtualDom.attribute("font-variant");
+   var fontStyle = $VirtualDom.attribute("font-style");
+   var fontStretch = $VirtualDom.attribute("font-stretch");
+   var fontSize = $VirtualDom.attribute("font-size");
+   var fontSizeAdjust = $VirtualDom.attribute("font-size-adjust");
+   var fontFamily = $VirtualDom.attribute("font-family");
+   var floodOpacity = $VirtualDom.attribute("flood-opacity");
+   var floodColor = $VirtualDom.attribute("flood-color");
+   var filter = $VirtualDom.attribute("filter");
+   var fill = $VirtualDom.attribute("fill");
+   var fillRule = $VirtualDom.attribute("fill-rule");
+   var fillOpacity = $VirtualDom.attribute("fill-opacity");
+   var enableBackground = $VirtualDom.attribute("enable-background");
+   var dominantBaseline = $VirtualDom.attribute("dominant-baseline");
+   var display = $VirtualDom.attribute("display");
+   var direction = $VirtualDom.attribute("direction");
+   var cursor = $VirtualDom.attribute("cursor");
+   var color = $VirtualDom.attribute("color");
+   var colorRendering = $VirtualDom.attribute("color-rendering");
+   var colorProfile = $VirtualDom.attribute("color-profile");
+   var colorInterpolation = $VirtualDom.attribute("color-interpolation");
+   var colorInterpolationFilters = $VirtualDom.attribute("color-interpolation-filters");
+   var clip = $VirtualDom.attribute("clip");
+   var clipRule = $VirtualDom.attribute("clip-rule");
+   var clipPath = $VirtualDom.attribute("clip-path");
+   var baselineShift = $VirtualDom.attribute("baseline-shift");
+   var alignmentBaseline = $VirtualDom.attribute("alignment-baseline");
+   var zoomAndPan = $VirtualDom.attribute("zoomAndPan");
+   var z = $VirtualDom.attribute("z");
+   var yChannelSelector = $VirtualDom.attribute("yChannelSelector");
+   var y2 = $VirtualDom.attribute("y2");
+   var y1 = $VirtualDom.attribute("y1");
+   var y = $VirtualDom.attribute("y");
+   var xmlSpace = A2($VirtualDom.attributeNS,"http://www.w3.org/XML/1998/namespace","xml:space");
+   var xmlLang = A2($VirtualDom.attributeNS,"http://www.w3.org/XML/1998/namespace","xml:lang");
+   var xmlBase = A2($VirtualDom.attributeNS,"http://www.w3.org/XML/1998/namespace","xml:base");
+   var xlinkType = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:type");
+   var xlinkTitle = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:title");
+   var xlinkShow = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:show");
+   var xlinkRole = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:role");
+   var xlinkHref = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:href");
+   var xlinkArcrole = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:arcrole");
+   var xlinkActuate = A2($VirtualDom.attributeNS,"http://www.w3.org/1999/xlink","xlink:actuate");
+   var xChannelSelector = $VirtualDom.attribute("xChannelSelector");
+   var x2 = $VirtualDom.attribute("x2");
+   var x1 = $VirtualDom.attribute("x1");
+   var xHeight = $VirtualDom.attribute("x-height");
+   var x = $VirtualDom.attribute("x");
+   var widths = $VirtualDom.attribute("widths");
+   var width = $VirtualDom.attribute("width");
+   var viewTarget = $VirtualDom.attribute("viewTarget");
+   var viewBox = $VirtualDom.attribute("viewBox");
+   var vertOriginY = $VirtualDom.attribute("vert-origin-y");
+   var vertOriginX = $VirtualDom.attribute("vert-origin-x");
+   var vertAdvY = $VirtualDom.attribute("vert-adv-y");
+   var version = $VirtualDom.attribute("version");
+   var values = $VirtualDom.attribute("values");
+   var vMathematical = $VirtualDom.attribute("v-mathematical");
+   var vIdeographic = $VirtualDom.attribute("v-ideographic");
+   var vHanging = $VirtualDom.attribute("v-hanging");
+   var vAlphabetic = $VirtualDom.attribute("v-alphabetic");
+   var unitsPerEm = $VirtualDom.attribute("units-per-em");
+   var unicodeRange = $VirtualDom.attribute("unicode-range");
+   var unicode = $VirtualDom.attribute("unicode");
+   var underlineThickness = $VirtualDom.attribute("underline-thickness");
+   var underlinePosition = $VirtualDom.attribute("underline-position");
+   var u2 = $VirtualDom.attribute("u2");
+   var u1 = $VirtualDom.attribute("u1");
+   var type$ = $VirtualDom.attribute("type");
+   var transform = $VirtualDom.attribute("transform");
+   var to = $VirtualDom.attribute("to");
+   var title = $VirtualDom.attribute("title");
+   var textLength = $VirtualDom.attribute("textLength");
+   var targetY = $VirtualDom.attribute("targetY");
+   var targetX = $VirtualDom.attribute("targetX");
+   var target = $VirtualDom.attribute("target");
+   var tableValues = $VirtualDom.attribute("tableValues");
+   var systemLanguage = $VirtualDom.attribute("systemLanguage");
+   var surfaceScale = $VirtualDom.attribute("surfaceScale");
+   var style = $VirtualDom.attribute("style");
+   var string = $VirtualDom.attribute("string");
+   var strikethroughThickness = $VirtualDom.attribute("strikethrough-thickness");
+   var strikethroughPosition = $VirtualDom.attribute("strikethrough-position");
+   var stitchTiles = $VirtualDom.attribute("stitchTiles");
+   var stemv = $VirtualDom.attribute("stemv");
+   var stemh = $VirtualDom.attribute("stemh");
+   var stdDeviation = $VirtualDom.attribute("stdDeviation");
+   var startOffset = $VirtualDom.attribute("startOffset");
+   var spreadMethod = $VirtualDom.attribute("spreadMethod");
+   var speed = $VirtualDom.attribute("speed");
+   var specularExponent = $VirtualDom.attribute("specularExponent");
+   var specularConstant = $VirtualDom.attribute("specularConstant");
+   var spacing = $VirtualDom.attribute("spacing");
+   var slope = $VirtualDom.attribute("slope");
+   var seed = $VirtualDom.attribute("seed");
+   var scale = $VirtualDom.attribute("scale");
+   var ry = $VirtualDom.attribute("ry");
+   var rx = $VirtualDom.attribute("rx");
+   var rotate = $VirtualDom.attribute("rotate");
+   var result = $VirtualDom.attribute("result");
+   var restart = $VirtualDom.attribute("restart");
+   var requiredFeatures = $VirtualDom.attribute("requiredFeatures");
+   var requiredExtensions = $VirtualDom.attribute("requiredExtensions");
+   var repeatDur = $VirtualDom.attribute("repeatDur");
+   var repeatCount = $VirtualDom.attribute("repeatCount");
+   var renderingIntent = $VirtualDom.attribute("rendering-intent");
+   var refY = $VirtualDom.attribute("refY");
+   var refX = $VirtualDom.attribute("refX");
+   var radius = $VirtualDom.attribute("radius");
+   var r = $VirtualDom.attribute("r");
+   var primitiveUnits = $VirtualDom.attribute("primitiveUnits");
+   var preserveAspectRatio = $VirtualDom.attribute("preserveAspectRatio");
+   var preserveAlpha = $VirtualDom.attribute("preserveAlpha");
+   var pointsAtZ = $VirtualDom.attribute("pointsAtZ");
+   var pointsAtY = $VirtualDom.attribute("pointsAtY");
+   var pointsAtX = $VirtualDom.attribute("pointsAtX");
+   var points = $VirtualDom.attribute("points");
+   var pointOrder = $VirtualDom.attribute("point-order");
+   var patternUnits = $VirtualDom.attribute("patternUnits");
+   var patternTransform = $VirtualDom.attribute("patternTransform");
+   var patternContentUnits = $VirtualDom.attribute("patternContentUnits");
+   var pathLength = $VirtualDom.attribute("pathLength");
+   var path = $VirtualDom.attribute("path");
+   var panose1 = $VirtualDom.attribute("panose-1");
+   var overlineThickness = $VirtualDom.attribute("overline-thickness");
+   var overlinePosition = $VirtualDom.attribute("overline-position");
+   var origin = $VirtualDom.attribute("origin");
+   var orientation = $VirtualDom.attribute("orientation");
+   var orient = $VirtualDom.attribute("orient");
+   var order = $VirtualDom.attribute("order");
+   var operator = $VirtualDom.attribute("operator");
+   var offset = $VirtualDom.attribute("offset");
+   var numOctaves = $VirtualDom.attribute("numOctaves");
+   var name = $VirtualDom.attribute("name");
+   var mode = $VirtualDom.attribute("mode");
+   var min = $VirtualDom.attribute("min");
+   var method = $VirtualDom.attribute("method");
+   var media = $VirtualDom.attribute("media");
+   var max = $VirtualDom.attribute("max");
+   var mathematical = $VirtualDom.attribute("mathematical");
+   var maskUnits = $VirtualDom.attribute("maskUnits");
+   var maskContentUnits = $VirtualDom.attribute("maskContentUnits");
+   var markerWidth = $VirtualDom.attribute("markerWidth");
+   var markerUnits = $VirtualDom.attribute("markerUnits");
+   var markerHeight = $VirtualDom.attribute("markerHeight");
+   var local = $VirtualDom.attribute("local");
+   var limitingConeAngle = $VirtualDom.attribute("limitingConeAngle");
+   var lengthAdjust = $VirtualDom.attribute("lengthAdjust");
+   var lang = $VirtualDom.attribute("lang");
+   var keyTimes = $VirtualDom.attribute("keyTimes");
+   var keySplines = $VirtualDom.attribute("keySplines");
+   var keyPoints = $VirtualDom.attribute("keyPoints");
+   var kernelUnitLength = $VirtualDom.attribute("kernelUnitLength");
+   var kernelMatrix = $VirtualDom.attribute("kernelMatrix");
+   var k4 = $VirtualDom.attribute("k4");
+   var k3 = $VirtualDom.attribute("k3");
+   var k2 = $VirtualDom.attribute("k2");
+   var k1 = $VirtualDom.attribute("k1");
+   var k = $VirtualDom.attribute("k");
+   var intercept = $VirtualDom.attribute("intercept");
+   var in2 = $VirtualDom.attribute("in2");
+   var in$ = $VirtualDom.attribute("in");
+   var ideographic = $VirtualDom.attribute("ideographic");
+   var id = $VirtualDom.attribute("id");
+   var horizOriginY = $VirtualDom.attribute("horiz-origin-y");
+   var horizOriginX = $VirtualDom.attribute("horiz-origin-x");
+   var horizAdvX = $VirtualDom.attribute("horiz-adv-x");
+   var height = $VirtualDom.attribute("height");
+   var hanging = $VirtualDom.attribute("hanging");
+   var gradientUnits = $VirtualDom.attribute("gradientUnits");
+   var gradientTransform = $VirtualDom.attribute("gradientTransform");
+   var glyphRef = $VirtualDom.attribute("glyphRef");
+   var glyphName = $VirtualDom.attribute("glyph-name");
+   var g2 = $VirtualDom.attribute("g2");
+   var g1 = $VirtualDom.attribute("g1");
+   var fy = $VirtualDom.attribute("fy");
+   var fx = $VirtualDom.attribute("fx");
+   var from = $VirtualDom.attribute("from");
+   var format = $VirtualDom.attribute("format");
+   var filterUnits = $VirtualDom.attribute("filterUnits");
+   var filterRes = $VirtualDom.attribute("filterRes");
+   var externalResourcesRequired = $VirtualDom.attribute("externalResourcesRequired");
+   var exponent = $VirtualDom.attribute("exponent");
+   var end = $VirtualDom.attribute("end");
+   var elevation = $VirtualDom.attribute("elevation");
+   var edgeMode = $VirtualDom.attribute("edgeMode");
+   var dy = $VirtualDom.attribute("dy");
+   var dx = $VirtualDom.attribute("dx");
+   var dur = $VirtualDom.attribute("dur");
+   var divisor = $VirtualDom.attribute("divisor");
+   var diffuseConstant = $VirtualDom.attribute("diffuseConstant");
+   var descent = $VirtualDom.attribute("descent");
+   var decelerate = $VirtualDom.attribute("decelerate");
+   var d = $VirtualDom.attribute("d");
+   var cy = $VirtualDom.attribute("cy");
+   var cx = $VirtualDom.attribute("cx");
+   var contentStyleType = $VirtualDom.attribute("contentStyleType");
+   var contentScriptType = $VirtualDom.attribute("contentScriptType");
+   var clipPathUnits = $VirtualDom.attribute("clipPathUnits");
+   var $class = $VirtualDom.attribute("class");
+   var capHeight = $VirtualDom.attribute("cap-height");
+   var calcMode = $VirtualDom.attribute("calcMode");
+   var by = $VirtualDom.attribute("by");
+   var bias = $VirtualDom.attribute("bias");
+   var begin = $VirtualDom.attribute("begin");
+   var bbox = $VirtualDom.attribute("bbox");
+   var baseProfile = $VirtualDom.attribute("baseProfile");
+   var baseFrequency = $VirtualDom.attribute("baseFrequency");
+   var azimuth = $VirtualDom.attribute("azimuth");
+   var autoReverse = $VirtualDom.attribute("autoReverse");
+   var attributeType = $VirtualDom.attribute("attributeType");
+   var attributeName = $VirtualDom.attribute("attributeName");
+   var ascent = $VirtualDom.attribute("ascent");
+   var arabicForm = $VirtualDom.attribute("arabic-form");
+   var amplitude = $VirtualDom.attribute("amplitude");
+   var allowReorder = $VirtualDom.attribute("allowReorder");
+   var alphabetic = $VirtualDom.attribute("alphabetic");
+   var additive = $VirtualDom.attribute("additive");
+   var accumulate = $VirtualDom.attribute("accumulate");
+   var accelerate = $VirtualDom.attribute("accelerate");
+   var accentHeight = $VirtualDom.attribute("accent-height");
+   return _elm.Svg.Attributes.values = {_op: _op
+                                       ,accentHeight: accentHeight
+                                       ,accelerate: accelerate
+                                       ,accumulate: accumulate
+                                       ,additive: additive
+                                       ,alphabetic: alphabetic
+                                       ,allowReorder: allowReorder
+                                       ,amplitude: amplitude
+                                       ,arabicForm: arabicForm
+                                       ,ascent: ascent
+                                       ,attributeName: attributeName
+                                       ,attributeType: attributeType
+                                       ,autoReverse: autoReverse
+                                       ,azimuth: azimuth
+                                       ,baseFrequency: baseFrequency
+                                       ,baseProfile: baseProfile
+                                       ,bbox: bbox
+                                       ,begin: begin
+                                       ,bias: bias
+                                       ,by: by
+                                       ,calcMode: calcMode
+                                       ,capHeight: capHeight
+                                       ,$class: $class
+                                       ,clipPathUnits: clipPathUnits
+                                       ,contentScriptType: contentScriptType
+                                       ,contentStyleType: contentStyleType
+                                       ,cx: cx
+                                       ,cy: cy
+                                       ,d: d
+                                       ,decelerate: decelerate
+                                       ,descent: descent
+                                       ,diffuseConstant: diffuseConstant
+                                       ,divisor: divisor
+                                       ,dur: dur
+                                       ,dx: dx
+                                       ,dy: dy
+                                       ,edgeMode: edgeMode
+                                       ,elevation: elevation
+                                       ,end: end
+                                       ,exponent: exponent
+                                       ,externalResourcesRequired: externalResourcesRequired
+                                       ,filterRes: filterRes
+                                       ,filterUnits: filterUnits
+                                       ,format: format
+                                       ,from: from
+                                       ,fx: fx
+                                       ,fy: fy
+                                       ,g1: g1
+                                       ,g2: g2
+                                       ,glyphName: glyphName
+                                       ,glyphRef: glyphRef
+                                       ,gradientTransform: gradientTransform
+                                       ,gradientUnits: gradientUnits
+                                       ,hanging: hanging
+                                       ,height: height
+                                       ,horizAdvX: horizAdvX
+                                       ,horizOriginX: horizOriginX
+                                       ,horizOriginY: horizOriginY
+                                       ,id: id
+                                       ,ideographic: ideographic
+                                       ,in$: in$
+                                       ,in2: in2
+                                       ,intercept: intercept
+                                       ,k: k
+                                       ,k1: k1
+                                       ,k2: k2
+                                       ,k3: k3
+                                       ,k4: k4
+                                       ,kernelMatrix: kernelMatrix
+                                       ,kernelUnitLength: kernelUnitLength
+                                       ,keyPoints: keyPoints
+                                       ,keySplines: keySplines
+                                       ,keyTimes: keyTimes
+                                       ,lang: lang
+                                       ,lengthAdjust: lengthAdjust
+                                       ,limitingConeAngle: limitingConeAngle
+                                       ,local: local
+                                       ,markerHeight: markerHeight
+                                       ,markerUnits: markerUnits
+                                       ,markerWidth: markerWidth
+                                       ,maskContentUnits: maskContentUnits
+                                       ,maskUnits: maskUnits
+                                       ,mathematical: mathematical
+                                       ,max: max
+                                       ,media: media
+                                       ,method: method
+                                       ,min: min
+                                       ,mode: mode
+                                       ,name: name
+                                       ,numOctaves: numOctaves
+                                       ,offset: offset
+                                       ,operator: operator
+                                       ,order: order
+                                       ,orient: orient
+                                       ,orientation: orientation
+                                       ,origin: origin
+                                       ,overlinePosition: overlinePosition
+                                       ,overlineThickness: overlineThickness
+                                       ,panose1: panose1
+                                       ,path: path
+                                       ,pathLength: pathLength
+                                       ,patternContentUnits: patternContentUnits
+                                       ,patternTransform: patternTransform
+                                       ,patternUnits: patternUnits
+                                       ,pointOrder: pointOrder
+                                       ,points: points
+                                       ,pointsAtX: pointsAtX
+                                       ,pointsAtY: pointsAtY
+                                       ,pointsAtZ: pointsAtZ
+                                       ,preserveAlpha: preserveAlpha
+                                       ,preserveAspectRatio: preserveAspectRatio
+                                       ,primitiveUnits: primitiveUnits
+                                       ,r: r
+                                       ,radius: radius
+                                       ,refX: refX
+                                       ,refY: refY
+                                       ,renderingIntent: renderingIntent
+                                       ,repeatCount: repeatCount
+                                       ,repeatDur: repeatDur
+                                       ,requiredExtensions: requiredExtensions
+                                       ,requiredFeatures: requiredFeatures
+                                       ,restart: restart
+                                       ,result: result
+                                       ,rotate: rotate
+                                       ,rx: rx
+                                       ,ry: ry
+                                       ,scale: scale
+                                       ,seed: seed
+                                       ,slope: slope
+                                       ,spacing: spacing
+                                       ,specularConstant: specularConstant
+                                       ,specularExponent: specularExponent
+                                       ,speed: speed
+                                       ,spreadMethod: spreadMethod
+                                       ,startOffset: startOffset
+                                       ,stdDeviation: stdDeviation
+                                       ,stemh: stemh
+                                       ,stemv: stemv
+                                       ,stitchTiles: stitchTiles
+                                       ,strikethroughPosition: strikethroughPosition
+                                       ,strikethroughThickness: strikethroughThickness
+                                       ,string: string
+                                       ,style: style
+                                       ,surfaceScale: surfaceScale
+                                       ,systemLanguage: systemLanguage
+                                       ,tableValues: tableValues
+                                       ,target: target
+                                       ,targetX: targetX
+                                       ,targetY: targetY
+                                       ,textLength: textLength
+                                       ,title: title
+                                       ,to: to
+                                       ,transform: transform
+                                       ,type$: type$
+                                       ,u1: u1
+                                       ,u2: u2
+                                       ,underlinePosition: underlinePosition
+                                       ,underlineThickness: underlineThickness
+                                       ,unicode: unicode
+                                       ,unicodeRange: unicodeRange
+                                       ,unitsPerEm: unitsPerEm
+                                       ,vAlphabetic: vAlphabetic
+                                       ,vHanging: vHanging
+                                       ,vIdeographic: vIdeographic
+                                       ,vMathematical: vMathematical
+                                       ,values: values
+                                       ,version: version
+                                       ,vertAdvY: vertAdvY
+                                       ,vertOriginX: vertOriginX
+                                       ,vertOriginY: vertOriginY
+                                       ,viewBox: viewBox
+                                       ,viewTarget: viewTarget
+                                       ,width: width
+                                       ,widths: widths
+                                       ,x: x
+                                       ,xHeight: xHeight
+                                       ,x1: x1
+                                       ,x2: x2
+                                       ,xChannelSelector: xChannelSelector
+                                       ,xlinkActuate: xlinkActuate
+                                       ,xlinkArcrole: xlinkArcrole
+                                       ,xlinkHref: xlinkHref
+                                       ,xlinkRole: xlinkRole
+                                       ,xlinkShow: xlinkShow
+                                       ,xlinkTitle: xlinkTitle
+                                       ,xlinkType: xlinkType
+                                       ,xmlBase: xmlBase
+                                       ,xmlLang: xmlLang
+                                       ,xmlSpace: xmlSpace
+                                       ,y: y
+                                       ,y1: y1
+                                       ,y2: y2
+                                       ,yChannelSelector: yChannelSelector
+                                       ,z: z
+                                       ,zoomAndPan: zoomAndPan
+                                       ,alignmentBaseline: alignmentBaseline
+                                       ,baselineShift: baselineShift
+                                       ,clipPath: clipPath
+                                       ,clipRule: clipRule
+                                       ,clip: clip
+                                       ,colorInterpolationFilters: colorInterpolationFilters
+                                       ,colorInterpolation: colorInterpolation
+                                       ,colorProfile: colorProfile
+                                       ,colorRendering: colorRendering
+                                       ,color: color
+                                       ,cursor: cursor
+                                       ,direction: direction
+                                       ,display: display
+                                       ,dominantBaseline: dominantBaseline
+                                       ,enableBackground: enableBackground
+                                       ,fillOpacity: fillOpacity
+                                       ,fillRule: fillRule
+                                       ,fill: fill
+                                       ,filter: filter
+                                       ,floodColor: floodColor
+                                       ,floodOpacity: floodOpacity
+                                       ,fontFamily: fontFamily
+                                       ,fontSizeAdjust: fontSizeAdjust
+                                       ,fontSize: fontSize
+                                       ,fontStretch: fontStretch
+                                       ,fontStyle: fontStyle
+                                       ,fontVariant: fontVariant
+                                       ,fontWeight: fontWeight
+                                       ,glyphOrientationHorizontal: glyphOrientationHorizontal
+                                       ,glyphOrientationVertical: glyphOrientationVertical
+                                       ,imageRendering: imageRendering
+                                       ,kerning: kerning
+                                       ,letterSpacing: letterSpacing
+                                       ,lightingColor: lightingColor
+                                       ,markerEnd: markerEnd
+                                       ,markerMid: markerMid
+                                       ,markerStart: markerStart
+                                       ,mask: mask
+                                       ,opacity: opacity
+                                       ,overflow: overflow
+                                       ,pointerEvents: pointerEvents
+                                       ,shapeRendering: shapeRendering
+                                       ,stopColor: stopColor
+                                       ,stopOpacity: stopOpacity
+                                       ,strokeDasharray: strokeDasharray
+                                       ,strokeDashoffset: strokeDashoffset
+                                       ,strokeLinecap: strokeLinecap
+                                       ,strokeLinejoin: strokeLinejoin
+                                       ,strokeMiterlimit: strokeMiterlimit
+                                       ,strokeOpacity: strokeOpacity
+                                       ,strokeWidth: strokeWidth
+                                       ,stroke: stroke
+                                       ,textAnchor: textAnchor
+                                       ,textDecoration: textDecoration
+                                       ,textRendering: textRendering
+                                       ,unicodeBidi: unicodeBidi
+                                       ,visibility: visibility
+                                       ,wordSpacing: wordSpacing
+                                       ,writingMode: writingMode};
+};
+Elm.Material = Elm.Material || {};
+Elm.Material.Icons = Elm.Material.Icons || {};
+Elm.Material.Icons.Internal = Elm.Material.Icons.Internal || {};
+Elm.Material.Icons.Internal.make = function (_elm) {
+   "use strict";
+   _elm.Material = _elm.Material || {};
+   _elm.Material.Icons = _elm.Material.Icons || {};
+   _elm.Material.Icons.Internal = _elm.Material.Icons.Internal || {};
+   if (_elm.Material.Icons.Internal.values) return _elm.Material.Icons.Internal.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Color = Elm.Color.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Svg = Elm.Svg.make(_elm),
+   $Svg$Attributes = Elm.Svg.Attributes.make(_elm);
+   var _op = {};
+   var toRgbaString = function (color) {
+      var _p0 = $Color.toRgb(color);
+      var red = _p0.red;
+      var green = _p0.green;
+      var blue = _p0.blue;
+      var alpha = _p0.alpha;
+      return A2($Basics._op["++"],
+      "rgba(",
+      A2($Basics._op["++"],
+      $Basics.toString(red),
+      A2($Basics._op["++"],
+      ",",
+      A2($Basics._op["++"],
+      $Basics.toString(green),
+      A2($Basics._op["++"],",",A2($Basics._op["++"],$Basics.toString(blue),A2($Basics._op["++"],",",A2($Basics._op["++"],$Basics.toString(alpha),")"))))))));
+   };
+   var icon = F3(function (path,color,size) {
+      var stringColor = toRgbaString(color);
+      var stringSize = $Basics.toString(size);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.path,_U.list([$Svg$Attributes.d(path),$Svg$Attributes.fill(stringColor)]),_U.list([]))]));
+   });
+   return _elm.Material.Icons.Internal.values = {_op: _op,icon: icon,toRgbaString: toRgbaString};
+};
+Elm.Material = Elm.Material || {};
+Elm.Material.Icons = Elm.Material.Icons || {};
+Elm.Material.Icons.Action = Elm.Material.Icons.Action || {};
+Elm.Material.Icons.Action.make = function (_elm) {
+   "use strict";
+   _elm.Material = _elm.Material || {};
+   _elm.Material.Icons = _elm.Material.Icons || {};
+   _elm.Material.Icons.Action = _elm.Material.Icons.Action || {};
+   if (_elm.Material.Icons.Action.values) return _elm.Material.Icons.Action.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Color = Elm.Color.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Material$Icons$Internal = Elm.Material.Icons.Internal.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Svg = Elm.Svg.make(_elm),
+   $Svg$Attributes = Elm.Svg.Attributes.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var _op = {};
+   var zoom_out = $Material$Icons$Internal.icon("M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z");
+   var zoom_in = $Material$Icons$Internal.icon("M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z");
+   var youtube_searched_for = $Material$Icons$Internal.icon("M17.01 14h-.8l-.27-.27c.98-1.14 1.57-2.61 1.57-4.23 0-3.59-2.91-6.5-6.5-6.5s-6.5 3-6.5 6.5H2l3.84 4 4.16-4H6.51C6.51 7 8.53 5 11.01 5s4.5 2.01 4.5 4.5c0 2.48-2.02 4.5-4.5 4.5-.65 0-1.26-.14-1.82-.38L7.71 15.1c.97.57 2.09.9 3.3.9 1.61 0 3.08-.59 4.22-1.57l.27.27v.79l5.01 4.99L22 19l-4.99-5z");
+   var work = $Material$Icons$Internal.icon("M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z");
+   var visibility_off = $Material$Icons$Internal.icon("M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z");
+   var visibility = $Material$Icons$Internal.icon("M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z");
+   var view_week = $Material$Icons$Internal.icon("M6 5H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h3c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zm14 0h-3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h3c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zm-7 0h-3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h3c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1z");
+   var view_stream = $Material$Icons$Internal.icon("M4 18h17v-6H4v6zM4 5v6h17V5H4z");
+   var view_quilt = $Material$Icons$Internal.icon("M10 18h5v-6h-5v6zm-6 0h5V5H4v13zm12 0h5v-6h-5v6zM10 5v6h11V5H10z");
+   var view_module = $Material$Icons$Internal.icon("M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z");
+   var view_list = $Material$Icons$Internal.icon("M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z");
+   var view_headline = $Material$Icons$Internal.icon("M4 15h16v-2H4v2zm0 4h16v-2H4v2zm0-8h16V9H4v2zm0-6v2h16V5H4z");
+   var view_day = $Material$Icons$Internal.icon("M2 21h19v-3H2v3zM20 8H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zM2 3v3h19V3H2z");
+   var view_column = $Material$Icons$Internal.icon("M10 18h5V5h-5v13zm-6 0h5V5H4v13zM16 5v13h5V5h-5z");
+   var view_carousel = $Material$Icons$Internal.icon("M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z");
+   var view_array = $Material$Icons$Internal.icon("M4 18h3V5H4v13zM18 5v13h3V5h-3zM8 18h9V5H8v13z");
+   var view_agenda = $Material$Icons$Internal.icon("M20 13H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm0-10H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z");
+   var verified_user = $Material$Icons$Internal.icon("M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z");
+   var turned_in_not = $Material$Icons$Internal.icon("M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z");
+   var turned_in = $Material$Icons$Internal.icon("M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z");
+   var trending_up = $Material$Icons$Internal.icon("M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z");
+   var trending_flat = $Material$Icons$Internal.icon("M22 12l-4-4v3H3v2h15v3z");
+   var trending_down = $Material$Icons$Internal.icon("M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z");
+   var translate = $Material$Icons$Internal.icon("M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z");
+   var track_changes = $Material$Icons$Internal.icon("M19.07 4.93l-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07z");
+   var toll = $Material$Icons$Internal.icon("M15 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zM3 12c0-2.61 1.67-4.83 4-5.65V4.26C3.55 5.15 1 8.27 1 12s2.55 6.85 6 7.74v-2.09c-2.33-.82-4-3.04-4-5.65z");
+   var today = $Material$Icons$Internal.icon("M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z");
+   var toc = $Material$Icons$Internal.icon("M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z");
+   var thumps_up_down = $Material$Icons$Internal.icon("M12 6c0-.55-.45-1-1-1H5.82l.66-3.18.02-.23c0-.31-.13-.59-.33-.8L5.38 0 .44 4.94C.17 5.21 0 5.59 0 6v6.5c0 .83.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.91l2.26-5.29c.07-.17.11-.36.11-.55V6zm10.5 4h-6.75c-.62 0-1.15.38-1.38.91l-2.26 5.29c-.07.17-.11.36-.11.55V18c0 .55.45 1 1 1h5.18l-.66 3.18-.02.24c0 .31.13.59.33.8l.79.78 4.94-4.94c.27-.27.44-.65.44-1.06v-6.5c0-.83-.67-1.5-1.5-1.5z");
+   var thumb_up = $Material$Icons$Internal.icon("M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z");
+   var thumb_down = $Material$Icons$Internal.icon("M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z");
+   var theaters = $Material$Icons$Internal.icon("M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z");
+   var tab_unselected = $Material$Icons$Internal.icon("M1 9h2V7H1v2zm0 4h2v-2H1v2zm0-8h2V3c-1.1 0-2 .9-2 2zm8 16h2v-2H9v2zm-8-4h2v-2H1v2zm2 4v-2H1c0 1.1.9 2 2 2zM21 3h-8v6h10V5c0-1.1-.9-2-2-2zm0 14h2v-2h-2v2zM9 5h2V3H9v2zM5 21h2v-2H5v2zM5 5h2V3H5v2zm16 16c1.1 0 2-.9 2-2h-2v2zm0-8h2v-2h-2v2zm-8 8h2v-2h-2v2zm4 0h2v-2h-2v2z");
+   var tab = $Material$Icons$Internal.icon("M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h10v4h8v10z");
+   var system_update_alt = $Material$Icons$Internal.icon("M12 16.5l4-4h-3v-9h-2v9H8l4 4zm9-13h-6v1.99h6v14.03H3V5.49h6V3.5H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2z");
+   var swap_vertical_circle = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM6.5 9L10 5.5 13.5 9H11v4H9V9H6.5zm11 6L14 18.5 10.5 15H13v-4h2v4h2.5z");
+   var swap_vert = $Material$Icons$Internal.icon("M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z");
+   var swap_horiz = $Material$Icons$Internal.icon("M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z");
+   var supervisor_account = $Material$Icons$Internal.icon("M16.5 12c1.38 0 2.49-1.12 2.49-2.5S17.88 7 16.5 7C15.12 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 2.99-1.34 2.99-3S10.66 5 9 5C7.34 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.85.33-2.34 2.37-3.47C10.5 13.1 9.66 13 9 13z");
+   var subject = $Material$Icons$Internal.icon("M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z");
+   var store = $Material$Icons$Internal.icon("M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z");
+   var stars = $Material$Icons$Internal.icon("M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z");
+   var star_rate = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 18 18")]),
+      _U.list([A2($Svg.path,
+      _U.list([$Svg$Attributes.d("M9 11.3l3.71 2.7-1.42-4.36L15 7h-4.55L9 2.5 7.55 7H3l3.71 2.64L5.29 14z"),$Svg$Attributes.fill(stringColor)]),
+      _U.list([]))]));
+   });
+   var spellcheck = $Material$Icons$Internal.icon("M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z");
+   var speaker_notes = $Material$Icons$Internal.icon("M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 14H6v-2h2v2zm0-3H6V9h2v2zm0-3H6V6h2v2zm7 6h-5v-2h5v2zm3-3h-8V9h8v2zm0-3h-8V6h8v2z");
+   var shopping_cart = $Material$Icons$Internal.icon("M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z");
+   var shopping_basket = $Material$Icons$Internal.icon("M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z");
+   var shop_two = $Material$Icons$Internal.icon("M3 9H1v11c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2H3V9zm15-4V3c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H5v11c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V5h-5zm-6-2h4v2h-4V3zm0 12V8l5.5 3-5.5 4z");
+   var shop = $Material$Icons$Internal.icon("M16 6V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H2v13c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6h-6zm-6-2h4v2h-4V4zM9 18V9l7.5 4L9 18z");
+   var settings_voice = $Material$Icons$Internal.icon("M7 24h2v-2H7v2zm5-11c1.66 0 2.99-1.34 2.99-3L15 4c0-1.66-1.34-3-3-3S9 2.34 9 4v6c0 1.66 1.34 3 3 3zm-1 11h2v-2h-2v2zm4 0h2v-2h-2v2zm4-14h-1.7c0 3-2.54 5.1-5.3 5.1S6.7 13 6.7 10H5c0 3.41 2.72 6.23 6 6.72V20h2v-3.28c3.28-.49 6-3.31 6-6.72z");
+   var settings_remote = $Material$Icons$Internal.icon("M15 9H9c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V10c0-.55-.45-1-1-1zm-3 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM7.05 6.05l1.41 1.41C9.37 6.56 10.62 6 12 6s2.63.56 3.54 1.46l1.41-1.41C15.68 4.78 13.93 4 12 4s-3.68.78-4.95 2.05zM12 0C8.96 0 6.21 1.23 4.22 3.22l1.41 1.41C7.26 3.01 9.51 2 12 2s4.74 1.01 6.36 2.64l1.41-1.41C17.79 1.23 15.04 0 12 0z");
+   var settings_power = $Material$Icons$Internal.icon("M7 24h2v-2H7v2zm4 0h2v-2h-2v2zm2-22h-2v10h2V2zm3.56 2.44l-1.45 1.45C16.84 6.94 18 8.83 18 11c0 3.31-2.69 6-6 6s-6-2.69-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 4.44C5.36 5.88 4 8.28 4 11c0 4.42 3.58 8 8 8s8-3.58 8-8c0-2.72-1.36-5.12-3.44-6.56zM15 24h2v-2h-2v2z");
+   var settings_phone = $Material$Icons$Internal.icon("M13 9h-2v2h2V9zm4 0h-2v2h2V9zm3 6.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 9v2h2V9h-2z");
+   var settings_overscan = $Material$Icons$Internal.icon("M12.01 5.5L10 8h4l-1.99-2.5zM18 10v4l2.5-1.99L18 10zM6 10l-2.5 2.01L6 14v-4zm8 6h-4l2.01 2.5L14 16zm7-13H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z");
+   var settings_input_svideo = $Material$Icons$Internal.icon("M8 11.5c0-.83-.67-1.5-1.5-1.5S5 10.67 5 11.5 5.67 13 6.5 13 8 12.33 8 11.5zm7-5c0-.83-.67-1.5-1.5-1.5h-3C9.67 5 9 5.67 9 6.5S9.67 8 10.5 8h3c.83 0 1.5-.67 1.5-1.5zM8.5 15c-.83 0-1.5.67-1.5 1.5S7.67 18 8.5 18s1.5-.67 1.5-1.5S9.33 15 8.5 15zM12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9zm5.5-11c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-2 5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z");
+   var settings_input_hdmi = $Material$Icons$Internal.icon("M18 7V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3H5v6l3 6v3h8v-3l3-6V7h-1zM8 4h8v3h-2V5h-1v2h-2V5h-1v2H8V4z");
+   var settings_input_composite = $Material$Icons$Internal.icon("M5 2c0-.55-.45-1-1-1s-1 .45-1 1v4H1v6h6V6H5V2zm4 14c0 1.3.84 2.4 2 2.82V23h2v-4.18c1.16-.41 2-1.51 2-2.82v-2H9v2zm-8 0c0 1.3.84 2.4 2 2.82V23h2v-4.18C6.16 18.4 7 17.3 7 16v-2H1v2zM21 6V2c0-.55-.45-1-1-1s-1 .45-1 1v4h-2v6h6V6h-2zm-8-4c0-.55-.45-1-1-1s-1 .45-1 1v4H9v6h6V6h-2V2zm4 14c0 1.3.84 2.4 2 2.82V23h2v-4.18c1.16-.41 2-1.51 2-2.82v-2h-6v2z");
+   var settings_input_component = $Material$Icons$Internal.icon("M5 2c0-.55-.45-1-1-1s-1 .45-1 1v4H1v6h6V6H5V2zm4 14c0 1.3.84 2.4 2 2.82V23h2v-4.18c1.16-.41 2-1.51 2-2.82v-2H9v2zm-8 0c0 1.3.84 2.4 2 2.82V23h2v-4.18C6.16 18.4 7 17.3 7 16v-2H1v2zM21 6V2c0-.55-.45-1-1-1s-1 .45-1 1v4h-2v6h6V6h-2zm-8-4c0-.55-.45-1-1-1s-1 .45-1 1v4H9v6h6V6h-2V2zm4 14c0 1.3.84 2.4 2 2.82V23h2v-4.18c1.16-.41 2-1.51 2-2.82v-2h-6v2z");
+   var settings_input_antenna = $Material$Icons$Internal.icon("M12 5c-3.87 0-7 3.13-7 7h2c0-2.76 2.24-5 5-5s5 2.24 5 5h2c0-3.87-3.13-7-7-7zm1 9.29c.88-.39 1.5-1.26 1.5-2.29 0-1.38-1.12-2.5-2.5-2.5S9.5 10.62 9.5 12c0 1.02.62 1.9 1.5 2.29v3.3L7.59 21 9 22.41l3-3 3 3L16.41 21 13 17.59v-3.3zM12 1C5.93 1 1 5.93 1 12h2c0-4.97 4.03-9 9-9s9 4.03 9 9h2c0-6.07-4.93-11-11-11z");
+   var settings_ethernet = $Material$Icons$Internal.icon("M7.77 6.76L6.23 5.48.82 12l5.41 6.52 1.54-1.28L3.42 12l4.35-5.24zM7 13h2v-2H7v2zm10-2h-2v2h2v-2zm-6 2h2v-2h-2v2zm6.77-7.52l-1.54 1.28L20.58 12l-4.35 5.24 1.54 1.28L23.18 12l-5.41-6.52z");
+   var settings_cell = $Material$Icons$Internal.icon("M7 24h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM16 .01L8 0C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V2c0-1.1-.9-1.99-2-1.99zM16 16H8V4h8v12z");
+   var settings_brightness = $Material$Icons$Internal.icon("M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02zM8 16h2.5l1.5 1.5 1.5-1.5H16v-2.5l1.5-1.5-1.5-1.5V8h-2.5L12 6.5 10.5 8H8v2.5L6.5 12 8 13.5V16zm4-7c1.66 0 3 1.34 3 3s-1.34 3-3 3V9z");
+   var settings_bluetooth = $Material$Icons$Internal.icon("M11 24h2v-2h-2v2zm-4 0h2v-2H7v2zm8 0h2v-2h-2v2zm2.71-18.29L12 0h-1v7.59L6.41 3 5 4.41 10.59 10 5 15.59 6.41 17 11 12.41V20h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 3.83l1.88 1.88L13 7.59V3.83zm1.88 10.46L13 16.17v-3.76l1.88 1.88z");
+   var settings_backup_restore = $Material$Icons$Internal.icon("M14 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-9c-4.97 0-9 4.03-9 9H0l4 4 4-4H5c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.51 0-2.91-.49-4.06-1.3l-1.42 1.44C8.04 20.3 9.94 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z");
+   var settings_application = $Material$Icons$Internal.icon("M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-1.75 9c0 .23-.02.46-.05.68l1.48 1.16c.13.11.17.3.08.45l-1.4 2.42c-.09.15-.27.21-.43.15l-1.74-.7c-.36.28-.76.51-1.18.69l-.26 1.85c-.03.17-.18.3-.35.3h-2.8c-.17 0-.32-.13-.35-.29l-.26-1.85c-.43-.18-.82-.41-1.18-.69l-1.74.7c-.16.06-.34 0-.43-.15l-1.4-2.42c-.09-.15-.05-.34.08-.45l1.48-1.16c-.03-.23-.05-.46-.05-.69 0-.23.02-.46.05-.68l-1.48-1.16c-.13-.11-.17-.3-.08-.45l1.4-2.42c.09-.15.27-.21.43-.15l1.74.7c.36-.28.76-.51 1.18-.69l.26-1.85c.03-.17.18-.3.35-.3h2.8c.17 0 .32.13.35.29l.26 1.85c.43.18.82.41 1.18.69l1.74-.7c.16-.06.34 0 .43.15l1.4 2.42c.09.15.05.34-.08.45l-1.48 1.16c.03.23.05.46.05.69z");
+   var settings = $Material$Icons$Internal.icon("M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z");
+   var search = $Material$Icons$Internal.icon("M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z");
+   var schedule = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.path,
+      _U.list([$Svg$Attributes.fillOpacity(".9")
+              ,$Svg$Attributes.d("M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z")
+              ,$Svg$Attributes.fill(stringColor)]),
+      _U.list([]))]));
+   });
+   var room = $Material$Icons$Internal.icon("M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z");
+   var restore = $Material$Icons$Internal.icon("M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z");
+   var report_problem = $Material$Icons$Internal.icon("M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z");
+   var reorder = $Material$Icons$Internal.icon("M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z");
+   var redeem = $Material$Icons$Internal.icon("M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z");
+   var receipt = $Material$Icons$Internal.icon("M18 17H6v-2h12v2zm0-4H6v-2h12v2zm0-4H6V7h12v2zM3 22l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20z");
+   var question_answer = $Material$Icons$Internal.icon("M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z");
+   var query_builder = $Material$Icons$Internal.icon("M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z");
+   var print = $Material$Icons$Internal.icon("M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z");
+   var power_settings_new = $Material$Icons$Internal.icon("M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z");
+   var polymer = $Material$Icons$Internal.icon("M19 4h-4L7.11 16.63 4.5 12 9 4H5L.5 12 5 20h4l7.89-12.63L19.5 12 15 20h4l4.5-8z");
+   var play_for_work = $Material$Icons$Internal.icon("M11 5v5.59H7.5l4.5 4.5 4.5-4.5H13V5h-2zm-5 9c0 3.31 2.69 6 6 6s6-2.69 6-6h-2c0 2.21-1.79 4-4 4s-4-1.79-4-4H6z");
+   var picture_in_picture = $Material$Icons$Internal.icon("M19 7h-8v6h8V7zm2-4H3c-1.1 0-2 .9-2 2v14c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98V5c0-1.1-.9-2-2-2zm0 16.01H3V4.98h18v14.03z");
+   var perm_scan_wifi = $Material$Icons$Internal.icon("M12 3C6.95 3 3.15 4.85 0 7.23L12 22 24 7.25C20.85 4.87 17.05 3 12 3zm1 13h-2v-6h2v6zm-2-8V6h2v2h-2z");
+   var perm_phone_msg = $Material$Icons$Internal.icon("M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM12 3v10l3-3h6V3h-9z");
+   var perm_media = $Material$Icons$Internal.icon("M2 6H0v5h.01L0 20c0 1.1.9 2 2 2h18v-2H2V6zm20-2h-8l-2-2H6c-1.1 0-1.99.9-1.99 2L4 16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7 15l4.5-6 3.5 4.51 2.5-3.01L21 15H7z");
+   var perm_identity = $Material$Icons$Internal.icon("M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z");
+   var perm_device_information = $Material$Icons$Internal.icon("M13 7h-2v2h2V7zm0 4h-2v6h2v-6zm4-9.99L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z");
+   var perm_data_setting = $Material$Icons$Internal.icon("M18.99 11.5c.34 0 .67.03 1 .07L20 0 0 20h11.56c-.04-.33-.07-.66-.07-1 0-4.14 3.36-7.5 7.5-7.5zm3.71 7.99c.02-.16.04-.32.04-.49 0-.17-.01-.33-.04-.49l1.06-.83c.09-.08.12-.21.06-.32l-1-1.73c-.06-.11-.19-.15-.31-.11l-1.24.5c-.26-.2-.54-.37-.85-.49l-.19-1.32c-.01-.12-.12-.21-.24-.21h-2c-.12 0-.23.09-.25.21l-.19 1.32c-.3.13-.59.29-.85.49l-1.24-.5c-.11-.04-.24 0-.31.11l-1 1.73c-.06.11-.04.24.06.32l1.06.83c-.02.16-.03.32-.03.49 0 .17.01.33.03.49l-1.06.83c-.09.08-.12.21-.06.32l1 1.73c.06.11.19.15.31.11l1.24-.5c.26.2.54.37.85.49l.19 1.32c.02.12.12.21.25.21h2c.12 0 .23-.09.25-.21l.19-1.32c.3-.13.59-.29.84-.49l1.25.5c.11.04.24 0 .31-.11l1-1.73c.06-.11.03-.24-.06-.32l-1.07-.83zm-3.71 1.01c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z");
+   var perm_contact_calendar = $Material$Icons$Internal.icon("M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z");
+   var perm_camera_mic = $Material$Icons$Internal.icon("M20 5h-3.17L15 3H9L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v-2.09c-2.83-.48-5-2.94-5-5.91h2c0 2.21 1.79 4 4 4s4-1.79 4-4h2c0 2.97-2.17 5.43-5 5.91V21h7c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-6 8c0 1.1-.9 2-2 2s-2-.9-2-2V9c0-1.1.9-2 2-2s2 .9 2 2v4z");
+   var payment = $Material$Icons$Internal.icon("M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z");
+   var pageview = $Material$Icons$Internal.icon("M11.5 9C10.12 9 9 10.12 9 11.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5S12.88 9 11.5 9zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-3.21 14.21l-2.91-2.91c-.69.44-1.51.7-2.39.7C9.01 16 7 13.99 7 11.5S9.01 7 11.5 7 16 9.01 16 11.5c0 .88-.26 1.69-.7 2.39l2.91 2.9-1.42 1.42z");
+   var open_with = $Material$Icons$Internal.icon("M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z");
+   var open_in_new = $Material$Icons$Internal.icon("M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z");
+   var open_in_browser = $Material$Icons$Internal.icon("M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z");
+   var offline_pin = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("a"),$Svg$Attributes.d("M0 0h24v24H0V0z")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("b")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#a"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A2($Svg.path,
+              _U.list([$Svg$Attributes.d("M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm5 16H7v-2h10v2zm-6.7-4L7 10.7l1.4-1.4 1.9 1.9 5.3-5.3L17 7.3 10.3 14z")
+                      ,$Svg$Attributes.clipPath("url(#b)")
+                      ,$Svg$Attributes.fill(stringColor)]),
+              _U.list([]))]));
+   });
+   var note_add = $Material$Icons$Internal.icon("M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z");
+   var markunread_mailbox = $Material$Icons$Internal.icon("M20 6H10v6H8V4h6V0H6v6H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z");
+   var loyalty = $Material$Icons$Internal.icon("M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7zm11.77 8.27L13 19.54l-4.27-4.27C8.28 14.81 8 14.19 8 13.5c0-1.38 1.12-2.5 2.5-2.5.69 0 1.32.28 1.77.74l.73.72.73-.73c.45-.45 1.08-.73 1.77-.73 1.38 0 2.5 1.12 2.5 2.5 0 .69-.28 1.32-.73 1.77z");
+   var lock_outline = $Material$Icons$Internal.icon("M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5.1c1.71 0 3.1 1.39 3.1 3.1v2H9V6h-.1c0-1.71 1.39-3.1 3.1-3.1zM18 20H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z");
+   var lock_open = $Material$Icons$Internal.icon("M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z");
+   var lock = $Material$Icons$Internal.icon("M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z");
+   var list = $Material$Icons$Internal.icon("M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z");
+   var launch = $Material$Icons$Internal.icon("M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z");
+   var language = $Material$Icons$Internal.icon("M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z");
+   var label_outline = $Material$Icons$Internal.icon("M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16zM16 17H5V7h11l3.55 5L16 17z");
+   var label = $Material$Icons$Internal.icon("M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z");
+   var invert_colors = $Material$Icons$Internal.icon("M17.66 7.93L12 2.27 6.34 7.93c-3.12 3.12-3.12 8.19 0 11.31C7.9 20.8 9.95 21.58 12 21.58c2.05 0 4.1-.78 5.66-2.34 3.12-3.12 3.12-8.19 0-11.31zM12 19.59c-1.6 0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z");
+   var input = $Material$Icons$Internal.icon("M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z");
+   var info_outline = $Material$Icons$Internal.icon("M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z");
+   var info = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z");
+   var https = $Material$Icons$Internal.icon("M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z");
+   var http = $Material$Icons$Internal.icon("M4.5 11h-2V9H1v6h1.5v-2.5h2V15H6V9H4.5v2zm2.5-.5h1.5V15H10v-4.5h1.5V9H7v1.5zm5.5 0H14V15h1.5v-4.5H17V9h-4.5v1.5zm9-1.5H18v6h1.5v-2h2c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5zm0 2.5h-2v-1h2v1z");
+   var hourglass_full = $Material$Icons$Internal.icon("M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6z");
+   var hourglass_empty = $Material$Icons$Internal.icon("M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z");
+   var home = $Material$Icons$Internal.icon("M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z");
+   var history = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.path,
+      _U.list([$Svg$Attributes.opacity(".9")
+              ,$Svg$Attributes.d("M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z")
+              ,$Svg$Attributes.fill(stringColor)]),
+      _U.list([]))]));
+   });
+   var highlight_off = $Material$Icons$Internal.icon("M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z");
+   var help_outline = $Material$Icons$Internal.icon("M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z");
+   var help = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z");
+   var group_work = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8zm6.5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z");
+   var grade = $Material$Icons$Internal.icon("M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z");
+   var gif = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("a"),$Svg$Attributes.d("M24 24H0V0h24v24z")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("b")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#a"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A2($Svg.path,
+              _U.list([$Svg$Attributes.d("M11.5 9H13v6h-1.5zM9 9H6c-.6 0-1 .5-1 1v4c0 .5.4 1 1 1h3c.6 0 1-.5 1-1v-2H8.5v1.5h-2v-3H10V10c0-.5-.4-1-1-1zm10 1.5V9h-4.5v6H16v-2h2v-1.5h-2v-1z")
+                      ,$Svg$Attributes.clipPath("url(#b)")
+                      ,$Svg$Attributes.fill(stringColor)]),
+              _U.list([]))]));
+   });
+   var get_app = $Material$Icons$Internal.icon("M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z");
+   var flip_to_front = $Material$Icons$Internal.icon("M3 13h2v-2H3v2zm0 4h2v-2H3v2zm2 4v-2H3c0 1.1.89 2 2 2zM3 9h2V7H3v2zm12 12h2v-2h-2v2zm4-18H9c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H9V5h10v10zm-8 6h2v-2h-2v2zm-4 0h2v-2H7v2z");
+   var flip_to_back = $Material$Icons$Internal.icon("M9 7H7v2h2V7zm0 4H7v2h2v-2zm0-8c-1.11 0-2 .9-2 2h2V3zm4 12h-2v2h2v-2zm6-12v2h2c0-1.1-.9-2-2-2zm-6 0h-2v2h2V3zM9 17v-2H7c0 1.1.89 2 2 2zm10-4h2v-2h-2v2zm0-4h2V7h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zM5 7H3v12c0 1.1.89 2 2 2h12v-2H5V7zm10-2h2V3h-2v2zm0 12h2v-2h-2v2z");
+   var flight_takeoff = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("a"),$Svg$Attributes.d("M0 0h24v24H0V0z")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("b")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#a"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A2($Svg.path,
+              _U.list([$Svg$Attributes.d("M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10l-6.9-6.43-1.93.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.43 5.31-1.42 4.35-1.16L21 11.49c.81-.23 1.28-1.05 1.07-1.85z")
+                      ,$Svg$Attributes.clipPath("url(#b)")
+                      ,$Svg$Attributes.fill(stringColor)]),
+              _U.list([]))]));
+   });
+   var flight_land = F2(function (color,size) {
+      var stringSize = $Basics.toString(size);
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("a"),$Svg$Attributes.d("M0 0h24v24H0V0z")]),_U.list([]))]))
+              ,A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("c"),$Svg$Attributes.d("M0 0h24v24H0V0z")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("b")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#a"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("d"),$Svg$Attributes.clipPath("url(#b)")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#c"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A2($Svg.path,
+              _U.list([$Svg$Attributes.d("M2.5 19h19v2h-19zm7.18-5.73l4.35 1.16 5.31 1.42c.8.21 1.62-.26 1.84-1.06.21-.8-.26-1.62-1.06-1.84l-5.31-1.42-2.76-9.02L10.12 2v8.28L5.15 8.95l-.93-2.32-1.45-.39v5.17l1.6.43 5.31 1.43z")
+                      ,$Svg$Attributes.clipPath("url(#d)")
+                      ,$Svg$Attributes.fill(stringColor)]),
+              _U.list([]))]));
+   });
+   var find_replace = $Material$Icons$Internal.icon("M11 6c1.38 0 2.63.56 3.54 1.46L12 10h6V4l-2.05 2.05C14.68 4.78 12.93 4 11 4c-3.53 0-6.43 2.61-6.92 6H6.1c.46-2.28 2.48-4 4.9-4zm5.64 9.14c.66-.9 1.12-1.97 1.28-3.14H15.9c-.46 2.28-2.48 4-4.9 4-1.38 0-2.63-.56-3.54-1.46L10 12H4v6l2.05-2.05C7.32 17.22 9.07 18 11 18c1.55 0 2.98-.51 4.14-1.36L20 21.49 21.49 20l-4.85-4.86z");
+   var find_in_page = $Material$Icons$Internal.icon("M20 19.59V8l-6-6H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.74.83-2.76.83-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1.02-.31 1.96-.83 2.75L20 19.59zM9 13c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z");
+   var feedback = $Material$Icons$Internal.icon("M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z");
+   var favorite_border = $Material$Icons$Internal.icon("M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z");
+   var favorite = $Material$Icons$Internal.icon("M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z");
+   var face = $Material$Icons$Internal.icon("M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z");
+   var extension = $Material$Icons$Internal.icon("M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z");
+   var explore = $Material$Icons$Internal.icon("M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z");
+   var exit_to_app = $Material$Icons$Internal.icon("M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z");
+   var event_seat = F2(function (color,size) {
+      var stringColor = $Material$Icons$Internal.toRgbaString(color);
+      var stringSize = $Basics.toString(size);
+      return A2($Svg.svg,
+      _U.list([$Svg$Attributes.width(stringSize),$Svg$Attributes.height(stringSize),$Svg$Attributes.viewBox("0 0 24 24")]),
+      _U.list([A2($Svg.defs,_U.list([]),_U.list([A2($Svg.path,_U.list([$Svg$Attributes.id("a"),$Svg$Attributes.d("M0 0h24v24H0V0z")]),_U.list([]))]))
+              ,A3($VirtualDom.node,
+              "clipPath",
+              _U.list([$Svg$Attributes.id("b")]),
+              _U.list([A2($Svg.use,_U.list([$Svg$Attributes.xlinkHref("#a"),$Svg$Attributes.overflow("visible")]),_U.list([]))]))
+              ,A2($Svg.path,
+              _U.list([$Svg$Attributes.d("M4 18v3h3v-3h10v3h3v-6H4zm15-8h3v3h-3zM2 10h3v3H2zm15 3H7V5c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v8z")
+                      ,$Svg$Attributes.clipPath("url(#b)")
+                      ,$Svg$Attributes.fill(stringColor)]),
+              _U.list([]))]));
+   });
+   var event = $Material$Icons$Internal.icon("M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z");
+   var eject = $Material$Icons$Internal.icon("M5 17h14v2H5zm7-12L5.33 15h13.34z");
+   var done_all = $Material$Icons$Internal.icon("M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z");
+   var done = $Material$Icons$Internal.icon("M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z");
+   var dns = $Material$Icons$Internal.icon("M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z");
+   var description = $Material$Icons$Internal.icon("M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z");
+   var $delete = $Material$Icons$Internal.icon("M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z");
+   var dashboard = $Material$Icons$Internal.icon("M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z");
+   var credit_card = $Material$Icons$Internal.icon("M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z");
+   var code = $Material$Icons$Internal.icon("M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z");
+   var $class = $Material$Icons$Internal.icon("M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z");
+   var chrome_reader_mode = $Material$Icons$Internal.icon("M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z");
+   var check_circle = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z");
+   var change_history = $Material$Icons$Internal.icon("M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z");
+   var card_travel = $Material$Icons$Internal.icon("M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM9 4h6v2H9V4zm11 15H4v-2h16v2zm0-5H4V8h3v2h2V8h6v2h2V8h3v6z");
+   var card_membership = $Material$Icons$Internal.icon("M20 2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h4v5l4-2 4 2v-5h4c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 13H4v-2h16v2zm0-5H4V4h16v6z");
+   var card_giftcard = $Material$Icons$Internal.icon("M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z");
+   var camera_enhance = $Material$Icons$Internal.icon("M9 3L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2h-3.17L15 3H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zM12 17l1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25z");
+   var cached = $Material$Icons$Internal.icon("M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z");
+   var build = $Material$Icons$Internal.icon("M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z");
+   var bug_report = $Material$Icons$Internal.icon("M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z");
+   var bookmark_border = $Material$Icons$Internal.icon("M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z");
+   var bookmark = $Material$Icons$Internal.icon("M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z");
+   var book = $Material$Icons$Internal.icon("M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z");
+   var backup = $Material$Icons$Internal.icon("M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z");
+   var autorenew = $Material$Icons$Internal.icon("M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z");
+   var assignment_turned_in = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z");
+   var assignment_returned = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 15l-5-5h3V9h4v4h3l-5 5z");
+   var assignment_return = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4 12h-4v3l-5-5 5-5v3h4v4z");
+   var assignment_late = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 15h-2v-2h2v2zm0-4h-2V8h2v6zm-1-9c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z");
+   var assignment_ind = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V19z");
+   var assignment = $Material$Icons$Internal.icon("M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z");
+   var assessment = $Material$Icons$Internal.icon("M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z");
+   var aspect_ratio = $Material$Icons$Internal.icon("M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z");
+   var announcement = $Material$Icons$Internal.icon("M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z");
+   var android = $Material$Icons$Internal.icon("M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z");
+   var alarm_on = $Material$Icons$Internal.icon("M22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm-1.46-5.47L8.41 12.4l-1.06 1.06 3.18 3.18 6-6-1.06-1.06-4.93 4.95z");
+   var alarm_off = $Material$Icons$Internal.icon("M12 6c3.87 0 7 3.13 7 7 0 .84-.16 1.65-.43 2.4l1.52 1.52c.58-1.19.91-2.51.91-3.92 0-4.97-4.03-9-9-9-1.41 0-2.73.33-3.92.91L9.6 6.43C10.35 6.16 11.16 6 12 6zm10-.28l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM2.92 2.29L1.65 3.57 2.98 4.9l-1.11.93 1.42 1.42 1.11-.94.8.8C3.83 8.69 3 10.75 3 13c0 4.97 4.02 9 9 9 2.25 0 4.31-.83 5.89-2.2l2.2 2.2 1.27-1.27L3.89 3.27l-.97-.98zm13.55 16.1C15.26 19.39 13.7 20 12 20c-3.87 0-7-3.13-7-7 0-1.7.61-3.26 1.61-4.47l9.86 9.86zM8.02 3.28L6.6 1.86l-.86.71 1.42 1.42.86-.71z");
+   var alarm_add = $Material$Icons$Internal.icon("M7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V9z");
+   var alarm = $Material$Icons$Internal.icon("M22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM12.5 8H11v6l4.75 2.85.75-1.23-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z");
+   var add_shopping_cart = $Material$Icons$Internal.icon("M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z");
+   var account_circle = $Material$Icons$Internal.icon("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z");
+   var account_box = $Material$Icons$Internal.icon("M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z");
+   var account_balance_with_wallet = $Material$Icons$Internal.icon("M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z");
+   var account_balance = $Material$Icons$Internal.icon("M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z");
+   var accessibility = $Material$Icons$Internal.icon("M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z");
+   var three_d_rotation = $Material$Icons$Internal.icon("M7.52 21.48C4.25 19.94 1.91 16.76 1.55 13H.05C.56 19.16 5.71 24 12 24l.66-.03-3.81-3.81-1.33 1.32zm.89-6.52c-.19 0-.37-.03-.52-.08-.16-.06-.29-.13-.4-.24-.11-.1-.2-.22-.26-.37-.06-.14-.09-.3-.09-.47h-1.3c0 .36.07.68.21.95.14.27.33.5.56.69.24.18.51.32.82.41.3.1.62.15.96.15.37 0 .72-.05 1.03-.15.32-.1.6-.25.83-.44s.42-.43.55-.72c.13-.29.2-.61.2-.97 0-.19-.02-.38-.07-.56-.05-.18-.12-.35-.23-.51-.1-.16-.24-.3-.4-.43-.17-.13-.37-.23-.61-.31.2-.09.37-.2.52-.33.15-.13.27-.27.37-.42.1-.15.17-.3.22-.46.05-.16.07-.32.07-.48 0-.36-.06-.68-.18-.96-.12-.28-.29-.51-.51-.69-.2-.19-.47-.33-.77-.43C9.1 8.05 8.76 8 8.39 8c-.36 0-.69.05-1 .16-.3.11-.57.26-.79.45-.21.19-.38.41-.51.67-.12.26-.18.54-.18.85h1.3c0-.17.03-.32.09-.45s.14-.25.25-.34c.11-.09.23-.17.38-.22.15-.05.3-.08.48-.08.4 0 .7.1.89.31.19.2.29.49.29.86 0 .18-.03.34-.08.49-.05.15-.14.27-.25.37-.11.1-.25.18-.41.24-.16.06-.36.09-.58.09H7.5v1.03h.77c.22 0 .42.02.6.07s.33.13.45.23c.12.11.22.24.29.4.07.16.1.35.1.57 0 .41-.12.72-.35.93-.23.23-.55.33-.95.33zm8.55-5.92c-.32-.33-.7-.59-1.14-.77-.43-.18-.92-.27-1.46-.27H12v8h2.3c.55 0 1.06-.09 1.51-.27.45-.18.84-.43 1.16-.76.32-.33.57-.73.74-1.19.17-.47.26-.99.26-1.57v-.4c0-.58-.09-1.1-.26-1.57-.18-.47-.43-.87-.75-1.2zm-.39 3.16c0 .42-.05.79-.14 1.13-.1.33-.24.62-.43.85-.19.23-.43.41-.71.53-.29.12-.62.18-.99.18h-.91V9.12h.97c.72 0 1.27.23 1.64.69.38.46.57 1.12.57 1.99v.4zM12 0l-.66.03 3.81 3.81 1.33-1.33c3.27 1.55 5.61 4.72 5.96 8.48h1.5C23.44 4.84 18.29 0 12 0z");
+   return _elm.Material.Icons.Action.values = {_op: _op
+                                              ,three_d_rotation: three_d_rotation
+                                              ,accessibility: accessibility
+                                              ,account_balance: account_balance
+                                              ,account_balance_with_wallet: account_balance_with_wallet
+                                              ,account_box: account_box
+                                              ,account_circle: account_circle
+                                              ,add_shopping_cart: add_shopping_cart
+                                              ,alarm: alarm
+                                              ,alarm_add: alarm_add
+                                              ,alarm_off: alarm_off
+                                              ,alarm_on: alarm_on
+                                              ,android: android
+                                              ,announcement: announcement
+                                              ,aspect_ratio: aspect_ratio
+                                              ,assessment: assessment
+                                              ,assignment: assignment
+                                              ,assignment_ind: assignment_ind
+                                              ,assignment_late: assignment_late
+                                              ,assignment_return: assignment_return
+                                              ,assignment_returned: assignment_returned
+                                              ,assignment_turned_in: assignment_turned_in
+                                              ,autorenew: autorenew
+                                              ,backup: backup
+                                              ,book: book
+                                              ,bookmark: bookmark
+                                              ,bookmark_border: bookmark_border
+                                              ,bug_report: bug_report
+                                              ,build: build
+                                              ,cached: cached
+                                              ,camera_enhance: camera_enhance
+                                              ,card_giftcard: card_giftcard
+                                              ,card_membership: card_membership
+                                              ,card_travel: card_travel
+                                              ,change_history: change_history
+                                              ,check_circle: check_circle
+                                              ,chrome_reader_mode: chrome_reader_mode
+                                              ,$class: $class
+                                              ,code: code
+                                              ,credit_card: credit_card
+                                              ,dashboard: dashboard
+                                              ,$delete: $delete
+                                              ,description: description
+                                              ,dns: dns
+                                              ,done: done
+                                              ,done_all: done_all
+                                              ,eject: eject
+                                              ,event: event
+                                              ,event_seat: event_seat
+                                              ,exit_to_app: exit_to_app
+                                              ,explore: explore
+                                              ,extension: extension
+                                              ,face: face
+                                              ,favorite: favorite
+                                              ,favorite_border: favorite_border
+                                              ,feedback: feedback
+                                              ,find_in_page: find_in_page
+                                              ,find_replace: find_replace
+                                              ,flight_land: flight_land
+                                              ,flight_takeoff: flight_takeoff
+                                              ,flip_to_back: flip_to_back
+                                              ,flip_to_front: flip_to_front
+                                              ,get_app: get_app
+                                              ,gif: gif
+                                              ,grade: grade
+                                              ,group_work: group_work
+                                              ,help: help
+                                              ,help_outline: help_outline
+                                              ,highlight_off: highlight_off
+                                              ,history: history
+                                              ,home: home
+                                              ,hourglass_empty: hourglass_empty
+                                              ,hourglass_full: hourglass_full
+                                              ,http: http
+                                              ,https: https
+                                              ,info: info
+                                              ,info_outline: info_outline
+                                              ,input: input
+                                              ,invert_colors: invert_colors
+                                              ,label: label
+                                              ,label_outline: label_outline
+                                              ,language: language
+                                              ,launch: launch
+                                              ,list: list
+                                              ,lock: lock
+                                              ,lock_open: lock_open
+                                              ,lock_outline: lock_outline
+                                              ,loyalty: loyalty
+                                              ,markunread_mailbox: markunread_mailbox
+                                              ,note_add: note_add
+                                              ,offline_pin: offline_pin
+                                              ,open_in_browser: open_in_browser
+                                              ,open_in_new: open_in_new
+                                              ,open_with: open_with
+                                              ,pageview: pageview
+                                              ,payment: payment
+                                              ,perm_camera_mic: perm_camera_mic
+                                              ,perm_contact_calendar: perm_contact_calendar
+                                              ,perm_data_setting: perm_data_setting
+                                              ,perm_device_information: perm_device_information
+                                              ,perm_identity: perm_identity
+                                              ,perm_media: perm_media
+                                              ,perm_phone_msg: perm_phone_msg
+                                              ,perm_scan_wifi: perm_scan_wifi
+                                              ,picture_in_picture: picture_in_picture
+                                              ,play_for_work: play_for_work
+                                              ,polymer: polymer
+                                              ,power_settings_new: power_settings_new
+                                              ,print: print
+                                              ,query_builder: query_builder
+                                              ,question_answer: question_answer
+                                              ,receipt: receipt
+                                              ,redeem: redeem
+                                              ,reorder: reorder
+                                              ,report_problem: report_problem
+                                              ,restore: restore
+                                              ,room: room
+                                              ,schedule: schedule
+                                              ,search: search
+                                              ,settings: settings
+                                              ,settings_application: settings_application
+                                              ,settings_backup_restore: settings_backup_restore
+                                              ,settings_bluetooth: settings_bluetooth
+                                              ,settings_brightness: settings_brightness
+                                              ,settings_cell: settings_cell
+                                              ,settings_ethernet: settings_ethernet
+                                              ,settings_input_antenna: settings_input_antenna
+                                              ,settings_input_component: settings_input_component
+                                              ,settings_input_composite: settings_input_composite
+                                              ,settings_input_hdmi: settings_input_hdmi
+                                              ,settings_input_svideo: settings_input_svideo
+                                              ,settings_overscan: settings_overscan
+                                              ,settings_phone: settings_phone
+                                              ,settings_power: settings_power
+                                              ,settings_remote: settings_remote
+                                              ,settings_voice: settings_voice
+                                              ,shop: shop
+                                              ,shop_two: shop_two
+                                              ,shopping_basket: shopping_basket
+                                              ,shopping_cart: shopping_cart
+                                              ,speaker_notes: speaker_notes
+                                              ,spellcheck: spellcheck
+                                              ,star_rate: star_rate
+                                              ,stars: stars
+                                              ,store: store
+                                              ,subject: subject
+                                              ,supervisor_account: supervisor_account
+                                              ,swap_horiz: swap_horiz
+                                              ,swap_vert: swap_vert
+                                              ,swap_vertical_circle: swap_vertical_circle
+                                              ,system_update_alt: system_update_alt
+                                              ,tab: tab
+                                              ,tab_unselected: tab_unselected
+                                              ,theaters: theaters
+                                              ,thumb_down: thumb_down
+                                              ,thumb_up: thumb_up
+                                              ,thumps_up_down: thumps_up_down
+                                              ,toc: toc
+                                              ,today: today
+                                              ,toll: toll
+                                              ,track_changes: track_changes
+                                              ,translate: translate
+                                              ,trending_down: trending_down
+                                              ,trending_flat: trending_flat
+                                              ,trending_up: trending_up
+                                              ,turned_in: turned_in
+                                              ,turned_in_not: turned_in_not
+                                              ,verified_user: verified_user
+                                              ,view_agenda: view_agenda
+                                              ,view_array: view_array
+                                              ,view_carousel: view_carousel
+                                              ,view_column: view_column
+                                              ,view_day: view_day
+                                              ,view_headline: view_headline
+                                              ,view_list: view_list
+                                              ,view_module: view_module
+                                              ,view_quilt: view_quilt
+                                              ,view_stream: view_stream
+                                              ,view_week: view_week
+                                              ,visibility: visibility
+                                              ,visibility_off: visibility_off
+                                              ,work: work
+                                              ,youtube_searched_for: youtube_searched_for
+                                              ,zoom_in: zoom_in
+                                              ,zoom_out: zoom_out};
+};
 Elm.Native.Effects = {};
 Elm.Native.Effects.make = function(localRuntime) {
 
@@ -11278,6 +12531,72 @@ Elm.Html.Attributes.make = function (_elm) {
                                         ,property: property
                                         ,attribute: attribute};
 };
+Elm.Html = Elm.Html || {};
+Elm.Html.Events = Elm.Html.Events || {};
+Elm.Html.Events.make = function (_elm) {
+   "use strict";
+   _elm.Html = _elm.Html || {};
+   _elm.Html.Events = _elm.Html.Events || {};
+   if (_elm.Html.Events.values) return _elm.Html.Events.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Json$Decode = Elm.Json.Decode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var _op = {};
+   var keyCode = A2($Json$Decode._op[":="],"keyCode",$Json$Decode.$int);
+   var targetChecked = A2($Json$Decode.at,_U.list(["target","checked"]),$Json$Decode.bool);
+   var targetValue = A2($Json$Decode.at,_U.list(["target","value"]),$Json$Decode.string);
+   var defaultOptions = $VirtualDom.defaultOptions;
+   var Options = F2(function (a,b) {    return {stopPropagation: a,preventDefault: b};});
+   var onWithOptions = $VirtualDom.onWithOptions;
+   var on = $VirtualDom.on;
+   var messageOn = F3(function (name,addr,msg) {    return A3(on,name,$Json$Decode.value,function (_p0) {    return A2($Signal.message,addr,msg);});});
+   var onClick = messageOn("click");
+   var onDoubleClick = messageOn("dblclick");
+   var onMouseMove = messageOn("mousemove");
+   var onMouseDown = messageOn("mousedown");
+   var onMouseUp = messageOn("mouseup");
+   var onMouseEnter = messageOn("mouseenter");
+   var onMouseLeave = messageOn("mouseleave");
+   var onMouseOver = messageOn("mouseover");
+   var onMouseOut = messageOn("mouseout");
+   var onBlur = messageOn("blur");
+   var onFocus = messageOn("focus");
+   var onSubmit = messageOn("submit");
+   var onKey = F3(function (name,addr,handler) {    return A3(on,name,keyCode,function (code) {    return A2($Signal.message,addr,handler(code));});});
+   var onKeyUp = onKey("keyup");
+   var onKeyDown = onKey("keydown");
+   var onKeyPress = onKey("keypress");
+   return _elm.Html.Events.values = {_op: _op
+                                    ,onBlur: onBlur
+                                    ,onFocus: onFocus
+                                    ,onSubmit: onSubmit
+                                    ,onKeyUp: onKeyUp
+                                    ,onKeyDown: onKeyDown
+                                    ,onKeyPress: onKeyPress
+                                    ,onClick: onClick
+                                    ,onDoubleClick: onDoubleClick
+                                    ,onMouseMove: onMouseMove
+                                    ,onMouseDown: onMouseDown
+                                    ,onMouseUp: onMouseUp
+                                    ,onMouseEnter: onMouseEnter
+                                    ,onMouseLeave: onMouseLeave
+                                    ,onMouseOver: onMouseOver
+                                    ,onMouseOut: onMouseOut
+                                    ,on: on
+                                    ,onWithOptions: onWithOptions
+                                    ,defaultOptions: defaultOptions
+                                    ,targetValue: targetValue
+                                    ,targetChecked: targetChecked
+                                    ,keyCode: keyCode
+                                    ,Options: Options};
+};
 Elm.Native.Http = {};
 Elm.Native.Http.make = function(localRuntime) {
 
@@ -11582,152 +12901,6 @@ Elm.Http.make = function (_elm) {
                              ,RawTimeout: RawTimeout
                              ,RawNetworkError: RawNetworkError};
 };
-
-// setup
-Elm.Native = Elm.Native || {};
-Elm.Native.Markdown = Elm.Native.Markdown || {};
-
-// definition
-Elm.Native.Markdown.make = function(localRuntime) {
-	'use strict';
-
-	// attempt to short-circuit
-	if ('values' in Elm.Native.Markdown)
-	{
-		return Elm.Native.Markdown.values;
-	}
-
-	var Element = Elm.Native.Graphics.Element.make(localRuntime);
-
-	var marked = (function() {
-		// catch the `marked` object regardless of the outer environment.
-		// (ex. a CommonJS module compatible environment.)
-		// note that this depends on marked's implementation of environment detection.
-		var module = {};
-		var exports = module.exports = {};
-
-		/**
-		 * marked - a markdown parser
-		 * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
-		 * https://github.com/chjj/marked
-		 */
-		(function(){var block={newline:/^\n+/,code:/^( {4}[^\n]+\n*)+/,fences:noop,hr:/^( *[-*_]){3,} *(?:\n+|$)/,heading:/^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,nptable:noop,lheading:/^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,blockquote:/^( *>[^\n]+(\n(?!def)[^\n]+)*\n*)+/,list:/^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,html:/^ *(?:comment|closed|closing) *(?:\n{2,}|\s*$)/,def:/^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,table:noop,paragraph:/^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,text:/^[^\n]+/};block.bullet=/(?:[*+-]|\d+\.)/;block.item=/^( *)(bull) [^\n]*(?:\n(?!\1bull )[^\n]*)*/;block.item=replace(block.item,"gm")(/bull/g,block.bullet)();block.list=replace(block.list)(/bull/g,block.bullet)("hr","\\n+(?=\\1?(?:[-*_] *){3,}(?:\\n+|$))")("def","\\n+(?="+block.def.source+")")();block.blockquote=replace(block.blockquote)("def",block.def)();block._tag="(?!(?:"+"a|em|strong|small|s|cite|q|dfn|abbr|data|time|code"+"|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo"+"|span|br|wbr|ins|del|img)\\b)\\w+(?!:/|[^\\w\\s@]*@)\\b";block.html=replace(block.html)("comment",/<!--[\s\S]*?-->/)("closed",/<(tag)[\s\S]+?<\/\1>/)("closing",/<tag(?:"[^"]*"|'[^']*'|[^'">])*?>/)(/tag/g,block._tag)();block.paragraph=replace(block.paragraph)("hr",block.hr)("heading",block.heading)("lheading",block.lheading)("blockquote",block.blockquote)("tag","<"+block._tag)("def",block.def)();block.normal=merge({},block);block.gfm=merge({},block.normal,{fences:/^ *(`{3,}|~{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,paragraph:/^/});block.gfm.paragraph=replace(block.paragraph)("(?!","(?!"+block.gfm.fences.source.replace("\\1","\\2")+"|"+block.list.source.replace("\\1","\\3")+"|")();block.tables=merge({},block.gfm,{nptable:/^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,table:/^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)\n*/});function Lexer(options){this.tokens=[];this.tokens.links={};this.options=options||marked.defaults;this.rules=block.normal;if(this.options.gfm){if(this.options.tables){this.rules=block.tables}else{this.rules=block.gfm}}}Lexer.rules=block;Lexer.lex=function(src,options){var lexer=new Lexer(options);return lexer.lex(src)};Lexer.prototype.lex=function(src){src=src.replace(/\r\n|\r/g,"\n").replace(/\t/g,"    ").replace(/\u00a0/g," ").replace(/\u2424/g,"\n");return this.token(src,true)};Lexer.prototype.token=function(src,top,bq){var src=src.replace(/^ +$/gm,""),next,loose,cap,bull,b,item,space,i,l;while(src){if(cap=this.rules.newline.exec(src)){src=src.substring(cap[0].length);if(cap[0].length>1){this.tokens.push({type:"space"})}}if(cap=this.rules.code.exec(src)){src=src.substring(cap[0].length);cap=cap[0].replace(/^ {4}/gm,"");this.tokens.push({type:"code",text:!this.options.pedantic?cap.replace(/\n+$/,""):cap});continue}if(cap=this.rules.fences.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"code",lang:cap[2],text:cap[3]});continue}if(cap=this.rules.heading.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"heading",depth:cap[1].length,text:cap[2]});continue}if(top&&(cap=this.rules.nptable.exec(src))){src=src.substring(cap[0].length);item={type:"table",header:cap[1].replace(/^ *| *\| *$/g,"").split(/ *\| */),align:cap[2].replace(/^ *|\| *$/g,"").split(/ *\| */),cells:cap[3].replace(/\n$/,"").split("\n")};for(i=0;i<item.align.length;i++){if(/^ *-+: *$/.test(item.align[i])){item.align[i]="right"}else if(/^ *:-+: *$/.test(item.align[i])){item.align[i]="center"}else if(/^ *:-+ *$/.test(item.align[i])){item.align[i]="left"}else{item.align[i]=null}}for(i=0;i<item.cells.length;i++){item.cells[i]=item.cells[i].split(/ *\| */)}this.tokens.push(item);continue}if(cap=this.rules.lheading.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"heading",depth:cap[2]==="="?1:2,text:cap[1]});continue}if(cap=this.rules.hr.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"hr"});continue}if(cap=this.rules.blockquote.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"blockquote_start"});cap=cap[0].replace(/^ *> ?/gm,"");this.token(cap,top,true);this.tokens.push({type:"blockquote_end"});continue}if(cap=this.rules.list.exec(src)){src=src.substring(cap[0].length);bull=cap[2];this.tokens.push({type:"list_start",ordered:bull.length>1});cap=cap[0].match(this.rules.item);next=false;l=cap.length;i=0;for(;i<l;i++){item=cap[i];space=item.length;item=item.replace(/^ *([*+-]|\d+\.) +/,"");if(~item.indexOf("\n ")){space-=item.length;item=!this.options.pedantic?item.replace(new RegExp("^ {1,"+space+"}","gm"),""):item.replace(/^ {1,4}/gm,"")}if(this.options.smartLists&&i!==l-1){b=block.bullet.exec(cap[i+1])[0];if(bull!==b&&!(bull.length>1&&b.length>1)){src=cap.slice(i+1).join("\n")+src;i=l-1}}loose=next||/\n\n(?!\s*$)/.test(item);if(i!==l-1){next=item.charAt(item.length-1)==="\n";if(!loose)loose=next}this.tokens.push({type:loose?"loose_item_start":"list_item_start"});this.token(item,false,bq);this.tokens.push({type:"list_item_end"})}this.tokens.push({type:"list_end"});continue}if(cap=this.rules.html.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:this.options.sanitize?"paragraph":"html",pre:cap[1]==="pre"||cap[1]==="script"||cap[1]==="style",text:cap[0]});continue}if(!bq&&top&&(cap=this.rules.def.exec(src))){src=src.substring(cap[0].length);this.tokens.links[cap[1].toLowerCase()]={href:cap[2],title:cap[3]};continue}if(top&&(cap=this.rules.table.exec(src))){src=src.substring(cap[0].length);item={type:"table",header:cap[1].replace(/^ *| *\| *$/g,"").split(/ *\| */),align:cap[2].replace(/^ *|\| *$/g,"").split(/ *\| */),cells:cap[3].replace(/(?: *\| *)?\n$/,"").split("\n")};for(i=0;i<item.align.length;i++){if(/^ *-+: *$/.test(item.align[i])){item.align[i]="right"}else if(/^ *:-+: *$/.test(item.align[i])){item.align[i]="center"}else if(/^ *:-+ *$/.test(item.align[i])){item.align[i]="left"}else{item.align[i]=null}}for(i=0;i<item.cells.length;i++){item.cells[i]=item.cells[i].replace(/^ *\| *| *\| *$/g,"").split(/ *\| */)}this.tokens.push(item);continue}if(top&&(cap=this.rules.paragraph.exec(src))){src=src.substring(cap[0].length);this.tokens.push({type:"paragraph",text:cap[1].charAt(cap[1].length-1)==="\n"?cap[1].slice(0,-1):cap[1]});continue}if(cap=this.rules.text.exec(src)){src=src.substring(cap[0].length);this.tokens.push({type:"text",text:cap[0]});continue}if(src){throw new Error("Infinite loop on byte: "+src.charCodeAt(0))}}return this.tokens};var inline={escape:/^\\([\\`*{}\[\]()#+\-.!_>])/,autolink:/^<([^ >]+(@|:\/)[^ >]+)>/,url:noop,tag:/^<!--[\s\S]*?-->|^<\/?\w+(?:"[^"]*"|'[^']*'|[^'">])*?>/,link:/^!?\[(inside)\]\(href\)/,reflink:/^!?\[(inside)\]\s*\[([^\]]*)\]/,nolink:/^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,strong:/^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,em:/^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,code:/^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,br:/^ {2,}\n(?!\s*$)/,del:noop,text:/^[\s\S]+?(?=[\\<!\[_*`]| {2,}\n|$)/};inline._inside=/(?:\[[^\]]*\]|[^\[\]]|\](?=[^\[]*\]))*/;inline._href=/\s*<?([\s\S]*?)>?(?:\s+['"]([\s\S]*?)['"])?\s*/;inline.link=replace(inline.link)("inside",inline._inside)("href",inline._href)();inline.reflink=replace(inline.reflink)("inside",inline._inside)();inline.normal=merge({},inline);inline.pedantic=merge({},inline.normal,{strong:/^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,em:/^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/});inline.gfm=merge({},inline.normal,{escape:replace(inline.escape)("])","~|])")(),url:/^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,del:/^~~(?=\S)([\s\S]*?\S)~~/,text:replace(inline.text)("]|","~]|")("|","|https?://|")()});inline.breaks=merge({},inline.gfm,{br:replace(inline.br)("{2,}","*")(),text:replace(inline.gfm.text)("{2,}","*")()});function InlineLexer(links,options){this.options=options||marked.defaults;this.links=links;this.rules=inline.normal;this.renderer=this.options.renderer||new Renderer;this.renderer.options=this.options;if(!this.links){throw new Error("Tokens array requires a `links` property.")}if(this.options.gfm){if(this.options.breaks){this.rules=inline.breaks}else{this.rules=inline.gfm}}else if(this.options.pedantic){this.rules=inline.pedantic}}InlineLexer.rules=inline;InlineLexer.output=function(src,links,options){var inline=new InlineLexer(links,options);return inline.output(src)};InlineLexer.prototype.output=function(src){var out="",link,text,href,cap;while(src){if(cap=this.rules.escape.exec(src)){src=src.substring(cap[0].length);out+=cap[1];continue}if(cap=this.rules.autolink.exec(src)){src=src.substring(cap[0].length);if(cap[2]==="@"){text=cap[1].charAt(6)===":"?this.mangle(cap[1].substring(7)):this.mangle(cap[1]);href=this.mangle("mailto:")+text}else{text=escape(cap[1]);href=text}out+=this.renderer.link(href,null,text);continue}if(!this.inLink&&(cap=this.rules.url.exec(src))){src=src.substring(cap[0].length);text=escape(cap[1]);href=text;out+=this.renderer.link(href,null,text);continue}if(cap=this.rules.tag.exec(src)){if(!this.inLink&&/^<a /i.test(cap[0])){this.inLink=true}else if(this.inLink&&/^<\/a>/i.test(cap[0])){this.inLink=false}src=src.substring(cap[0].length);out+=this.options.sanitize?escape(cap[0]):cap[0];continue}if(cap=this.rules.link.exec(src)){src=src.substring(cap[0].length);this.inLink=true;out+=this.outputLink(cap,{href:cap[2],title:cap[3]});this.inLink=false;continue}if((cap=this.rules.reflink.exec(src))||(cap=this.rules.nolink.exec(src))){src=src.substring(cap[0].length);link=(cap[2]||cap[1]).replace(/\s+/g," ");link=this.links[link.toLowerCase()];if(!link||!link.href){out+=cap[0].charAt(0);src=cap[0].substring(1)+src;continue}this.inLink=true;out+=this.outputLink(cap,link);this.inLink=false;continue}if(cap=this.rules.strong.exec(src)){src=src.substring(cap[0].length);out+=this.renderer.strong(this.output(cap[2]||cap[1]));continue}if(cap=this.rules.em.exec(src)){src=src.substring(cap[0].length);out+=this.renderer.em(this.output(cap[2]||cap[1]));continue}if(cap=this.rules.code.exec(src)){src=src.substring(cap[0].length);out+=this.renderer.codespan(escape(cap[2],true));continue}if(cap=this.rules.br.exec(src)){src=src.substring(cap[0].length);out+=this.renderer.br();continue}if(cap=this.rules.del.exec(src)){src=src.substring(cap[0].length);out+=this.renderer.del(this.output(cap[1]));continue}if(cap=this.rules.text.exec(src)){src=src.substring(cap[0].length);out+=escape(this.smartypants(cap[0]));continue}if(src){throw new Error("Infinite loop on byte: "+src.charCodeAt(0))}}return out};InlineLexer.prototype.outputLink=function(cap,link){var href=escape(link.href),title=link.title?escape(link.title):null;return cap[0].charAt(0)!=="!"?this.renderer.link(href,title,this.output(cap[1])):this.renderer.image(href,title,escape(cap[1]))};InlineLexer.prototype.smartypants=function(text){if(!this.options.smartypants)return text;return text.replace(/--/g,"—").replace(/(^|[-\u2014/(\[{"\s])'/g,"$1‘").replace(/'/g,"’").replace(/(^|[-\u2014/(\[{\u2018\s])"/g,"$1“").replace(/"/g,"”").replace(/\.{3}/g,"…")};InlineLexer.prototype.mangle=function(text){var out="",l=text.length,i=0,ch;for(;i<l;i++){ch=text.charCodeAt(i);if(Math.random()>.5){ch="x"+ch.toString(16)}out+="&#"+ch+";"}return out};function Renderer(options){this.options=options||{}}Renderer.prototype.code=function(code,lang,escaped){if(this.options.highlight){var out=this.options.highlight(code,lang);if(out!=null&&out!==code){escaped=true;code=out}}if(!lang){return"<pre><code>"+(escaped?code:escape(code,true))+"\n</code></pre>"}return'<pre><code class="'+this.options.langPrefix+escape(lang,true)+'">'+(escaped?code:escape(code,true))+"\n</code></pre>\n"};Renderer.prototype.blockquote=function(quote){return"<blockquote>\n"+quote+"</blockquote>\n"};Renderer.prototype.html=function(html){return html};Renderer.prototype.heading=function(text,level,raw){return"<h"+level+' id="'+this.options.headerPrefix+raw.toLowerCase().replace(/[^\w]+/g,"-")+'">'+text+"</h"+level+">\n"};Renderer.prototype.hr=function(){return this.options.xhtml?"<hr/>\n":"<hr>\n"};Renderer.prototype.list=function(body,ordered){var type=ordered?"ol":"ul";return"<"+type+">\n"+body+"</"+type+">\n"};Renderer.prototype.listitem=function(text){return"<li>"+text+"</li>\n"};Renderer.prototype.paragraph=function(text){return"<p>"+text+"</p>\n"};Renderer.prototype.table=function(header,body){return"<table>\n"+"<thead>\n"+header+"</thead>\n"+"<tbody>\n"+body+"</tbody>\n"+"</table>\n"};Renderer.prototype.tablerow=function(content){return"<tr>\n"+content+"</tr>\n"};Renderer.prototype.tablecell=function(content,flags){var type=flags.header?"th":"td";var tag=flags.align?"<"+type+' style="text-align:'+flags.align+'">':"<"+type+">";return tag+content+"</"+type+">\n"};Renderer.prototype.strong=function(text){return"<strong>"+text+"</strong>"};Renderer.prototype.em=function(text){return"<em>"+text+"</em>"};Renderer.prototype.codespan=function(text){return"<code>"+text+"</code>"};Renderer.prototype.br=function(){return this.options.xhtml?"<br/>":"<br>"};Renderer.prototype.del=function(text){return"<del>"+text+"</del>"};Renderer.prototype.link=function(href,title,text){if(this.options.sanitize){try{var prot=decodeURIComponent(unescape(href)).replace(/[^\w:]/g,"").toLowerCase()}catch(e){return""}if(prot.indexOf("javascript:")===0){return""}}var out='<a href="'+href+'"';if(title){out+=' title="'+title+'"'}out+=">"+text+"</a>";return out};Renderer.prototype.image=function(href,title,text){var out='<img src="'+href+'" alt="'+text+'"';if(title){out+=' title="'+title+'"'}out+=this.options.xhtml?"/>":">";return out};function Parser(options){this.tokens=[];this.token=null;this.options=options||marked.defaults;this.options.renderer=this.options.renderer||new Renderer;this.renderer=this.options.renderer;this.renderer.options=this.options}Parser.parse=function(src,options,renderer){var parser=new Parser(options,renderer);return parser.parse(src)};Parser.prototype.parse=function(src){this.inline=new InlineLexer(src.links,this.options,this.renderer);this.tokens=src.reverse();var out="";while(this.next()){out+=this.tok()}return out};Parser.prototype.next=function(){return this.token=this.tokens.pop()};Parser.prototype.peek=function(){return this.tokens[this.tokens.length-1]||0};Parser.prototype.parseText=function(){var body=this.token.text;while(this.peek().type==="text"){body+="\n"+this.next().text}return this.inline.output(body)};Parser.prototype.tok=function(){switch(this.token.type){case"space":{return""}case"hr":{return this.renderer.hr()}case"heading":{return this.renderer.heading(this.inline.output(this.token.text),this.token.depth,this.token.text)}case"code":{return this.renderer.code(this.token.text,this.token.lang,this.token.escaped)}case"table":{var header="",body="",i,row,cell,flags,j;cell="";for(i=0;i<this.token.header.length;i++){flags={header:true,align:this.token.align[i]};cell+=this.renderer.tablecell(this.inline.output(this.token.header[i]),{header:true,align:this.token.align[i]})}header+=this.renderer.tablerow(cell);for(i=0;i<this.token.cells.length;i++){row=this.token.cells[i];cell="";for(j=0;j<row.length;j++){cell+=this.renderer.tablecell(this.inline.output(row[j]),{header:false,align:this.token.align[j]})}body+=this.renderer.tablerow(cell)}return this.renderer.table(header,body)}case"blockquote_start":{var body="";while(this.next().type!=="blockquote_end"){body+=this.tok()}return this.renderer.blockquote(body)}case"list_start":{var body="",ordered=this.token.ordered;while(this.next().type!=="list_end"){body+=this.tok()}return this.renderer.list(body,ordered)}case"list_item_start":{var body="";while(this.next().type!=="list_item_end"){body+=this.token.type==="text"?this.parseText():this.tok()}return this.renderer.listitem(body)}case"loose_item_start":{var body="";while(this.next().type!=="list_item_end"){body+=this.tok()}return this.renderer.listitem(body)}case"html":{var html=!this.token.pre&&!this.options.pedantic?this.inline.output(this.token.text):this.token.text;return this.renderer.html(html)}case"paragraph":{return this.renderer.paragraph(this.inline.output(this.token.text))}case"text":{return this.renderer.paragraph(this.parseText())}}};function escape(html,encode){return html.replace(!encode?/&(?!#?\w+;)/g:/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}function unescape(html){return html.replace(/&([#\w]+);/g,function(_,n){n=n.toLowerCase();if(n==="colon")return":";if(n.charAt(0)==="#"){return n.charAt(1)==="x"?String.fromCharCode(parseInt(n.substring(2),16)):String.fromCharCode(+n.substring(1))}return""})}function replace(regex,opt){regex=regex.source;opt=opt||"";return function self(name,val){if(!name)return new RegExp(regex,opt);val=val.source||val;val=val.replace(/(^|[^\[])\^/g,"$1");regex=regex.replace(name,val);return self}}function noop(){}noop.exec=noop;function merge(obj){var i=1,target,key;for(;i<arguments.length;i++){target=arguments[i];for(key in target){if(Object.prototype.hasOwnProperty.call(target,key)){obj[key]=target[key]}}}return obj}function marked(src,opt,callback){if(callback||typeof opt==="function"){if(!callback){callback=opt;opt=null}opt=merge({},marked.defaults,opt||{});var highlight=opt.highlight,tokens,pending,i=0;try{tokens=Lexer.lex(src,opt)}catch(e){return callback(e)}pending=tokens.length;var done=function(err){if(err){opt.highlight=highlight;return callback(err)}var out;try{out=Parser.parse(tokens,opt)}catch(e){err=e}opt.highlight=highlight;return err?callback(err):callback(null,out)};if(!highlight||highlight.length<3){return done()}delete opt.highlight;if(!pending)return done();for(;i<tokens.length;i++){(function(token){if(token.type!=="code"){return--pending||done()}return highlight(token.text,token.lang,function(err,code){if(err)return done(err);if(code==null||code===token.text){return--pending||done()}token.text=code;token.escaped=true;--pending||done()})})(tokens[i])}return}try{if(opt)opt=merge({},marked.defaults,opt);return Parser.parse(Lexer.lex(src,opt),opt)}catch(e){e.message+="\nPlease report this to https://github.com/chjj/marked.";if((opt||marked.defaults).silent){return"<p>An error occured:</p><pre>"+escape(e.message+"",true)+"</pre>"}throw e}}marked.options=marked.setOptions=function(opt){merge(marked.defaults,opt);return marked};marked.defaults={gfm:true,tables:true,breaks:false,pedantic:false,sanitize:false,smartLists:false,silent:false,highlight:null,langPrefix:"lang-",smartypants:false,headerPrefix:"",renderer:new Renderer,xhtml:false};marked.Parser=Parser;marked.parser=Parser.parse;marked.Renderer=Renderer;marked.Lexer=Lexer;marked.lexer=Lexer.lex;marked.InlineLexer=InlineLexer;marked.inlineLexer=InlineLexer.output;marked.parse=marked;if(typeof module!=="undefined"&&typeof exports==="object"){module.exports=marked}else if(typeof define==="function"&&define.amd){define(function(){return marked})}else{this.marked=marked}}).call(function(){return this||(typeof window!=="undefined"?window:global)}());
-
-		return module.exports;
-	})();
-
-	function formatOptions(options) {
-		var toHighlight = function (code, lang) {
-			if (!lang && options.defaultHighlighting.ctor === 'Just')
-			{
-				lang = options.defaultHighlighting._0;
-			}
-			if (typeof hljs !== 'undefined'
-				&& lang
-				&& hljs.listLanguages().indexOf(lang) >= 0)
-			{
-				return hljs.highlight(lang, code, true).value;
-			}
-			return code;
-		};
-		var gfm = options.githubFlavored;
-		if (gfm.ctor === 'Just')
-		{
-			return {
-				highlight: toHighlight,
-				gfm: true,
-				tables: gfm._0.tables,
-				breaks: gfm._0.breaks,
-				sanitize: options.sanitize,
-				smartypants: options.smartypants
-			};
-		}
-		else
-		{
-			return {
-				highlight: toHighlight,
-				gfm: false,
-				tables: false,
-				breaks: false,
-				sanitize: options.sanitize,
-				smartypants: options.smartypants
-			};
-		}
-	}
-
-	function toHtmlWith(options, rawMarkdown)
-	{
-		return new MarkdownWidget(options, rawMarkdown);
-	}
-
-	function MarkdownWidget(options, rawMarkdown)
-	{
-		this.options = options;
-		this.markdown = rawMarkdown;
-	}
-
-	MarkdownWidget.prototype.type = "Widget";
-
-	MarkdownWidget.prototype.init = function init()
-	{
-		var html = marked(this.markdown, formatOptions(this.options));
-		var div = document.createElement('div');
-		div.innerHTML = html;
-		return div;
-	};
-
-	MarkdownWidget.prototype.update = function update(previous, node)
-	{
-		if (this.markdown !== previous.markdown || this.options != previous.options)
-		{
-			var html = marked(this.markdown, formatOptions(this.options));
-			node.innerHTML = html;
-		}
-		return node;
-	};
-
-
-	function toElementWith(options, rawMarkdown)
-	{
-		return Element.markdown(marked(rawMarkdown, formatOptions(options)));
-	}
-
-	return Elm.Native.Markdown.values = {
-		toHtmlWith: F2(toHtmlWith),
-		toElementWith: F2(toElementWith)
-	};
-};
-
-Elm.Markdown = Elm.Markdown || {};
-Elm.Markdown.make = function (_elm) {
-   "use strict";
-   _elm.Markdown = _elm.Markdown || {};
-   if (_elm.Markdown.values) return _elm.Markdown.values;
-   var _U = Elm.Native.Utils.make(_elm),
-   $Basics = Elm.Basics.make(_elm),
-   $Debug = Elm.Debug.make(_elm),
-   $Graphics$Element = Elm.Graphics.Element.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Native$Markdown = Elm.Native.Markdown.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var _op = {};
-   var toElementWith = $Native$Markdown.toElementWith;
-   var toHtmlWith = $Native$Markdown.toHtmlWith;
-   var defaultOptions = {githubFlavored: $Maybe.Just({tables: false,breaks: false}),defaultHighlighting: $Maybe.Nothing,sanitize: false,smartypants: false};
-   var Options = F4(function (a,b,c,d) {    return {githubFlavored: a,defaultHighlighting: b,sanitize: c,smartypants: d};});
-   var toElement = function (string) {    return A2($Native$Markdown.toElementWith,defaultOptions,string);};
-   var toHtml = function (string) {    return A2($Native$Markdown.toHtmlWith,defaultOptions,string);};
-   return _elm.Markdown.values = {_op: _op
-                                 ,toHtml: toHtml
-                                 ,toElement: toElement
-                                 ,Options: Options
-                                 ,defaultOptions: defaultOptions
-                                 ,toHtmlWith: toHtmlWith
-                                 ,toElementWith: toElementWith};
-};
 Elm.Css = Elm.Css || {};
 Elm.Css.make = function (_elm) {
    "use strict";
@@ -11811,8 +12984,6 @@ Elm.Urls.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
-   var addForm = "/add_form";
-   var index = "/";
    var suggestedTags = "/suggested_tags";
    var docsWithTag = function (pk) {    return A2($Basics._op["++"],"/docs_with_tag/",$Basics.toString(pk));};
    var document = function (pk) {    return A2($Basics._op["++"],"/document/",$Basics.toString(pk));};
@@ -11822,14 +12993,7 @@ Elm.Urls.make = function (_elm) {
       A2($Basics._op["++"],query,A2($Basics._op["++"],"/",A2($String.join,",",A2($List.map,$Basics.toString,tagPks)))));
    });
    var image = function (s) {    return A2($Basics._op["++"],"/static/img/",s);};
-   return _elm.Urls.values = {_op: _op
-                             ,image: image
-                             ,searchDocuments: searchDocuments
-                             ,document: document
-                             ,docsWithTag: docsWithTag
-                             ,suggestedTags: suggestedTags
-                             ,index: index
-                             ,addForm: addForm};
+   return _elm.Urls.values = {_op: _op,image: image,searchDocuments: searchDocuments,document: document,docsWithTag: docsWithTag,suggestedTags: suggestedTags};
 };
 Elm.Database = Elm.Database || {};
 Elm.Database.Tag = Elm.Database.Tag || {};
@@ -12030,113 +13194,257 @@ Elm.SharedView.make = function (_elm) {
                    _U.list([$Html$Attributes.href("/")]),
                    _U.list([A2($Html.img,_U.list([$Html$Attributes.src($Urls.image("logo.svg")),$Css.columnImage]),_U.list([]))]))]))
                    ,A2($Html.div,
-                   _U.list([$Css.column(10)]),
+                   _U.list([$Css.column(8)]),
                    _U.list([A2($Html.h1,
                    _U.list([$Html$Attributes.id("title")]),
                    _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/"),$Html$Attributes.$class("link")]),_U.list([$Html.text("SAŽETAK.hr")]))]))]))]))
-           ,A2($Html.div,
-           _U.list([$Css.row]),
-           _U.list([A2($Html.div,
-                   _U.list([$Css.column(6)]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.$class("u-full-width button"),$Html$Attributes.href($Urls.index)]),
-                   _U.list([$Html.text("traži")]))]))
-                   ,A2($Html.div,
-                   _U.list([$Css.column(6)]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.$class("u-full-width button"),$Html$Attributes.href($Urls.addForm)]),
-                   _U.list([$Html.text("dodaj")]))]))]))
-           ,A2($Html.hr,_U.list([$Html$Attributes.id("header-line")]),_U.list([]))]));
+           ,A2($Html.hr,_U.list([]),_U.list([]))]));
    return _elm.SharedView.values = {_op: _op,header: header,footer: footer};
 };
-Elm.DocumentDisplay = Elm.DocumentDisplay || {};
-Elm.DocumentDisplay.make = function (_elm) {
+Elm.TagSelector = Elm.TagSelector || {};
+Elm.TagSelector.make = function (_elm) {
    "use strict";
-   _elm.DocumentDisplay = _elm.DocumentDisplay || {};
-   if (_elm.DocumentDisplay.values) return _elm.DocumentDisplay.values;
+   _elm.TagSelector = _elm.TagSelector || {};
+   if (_elm.TagSelector.values) return _elm.TagSelector.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Css = Elm.Css.make(_elm),
-   $CustomStartApp = Elm.CustomStartApp.make(_elm),
+   $Database$Tag = Elm.Database.Tag.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
+   $EffectsUtil = Elm.EffectsUtil.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $Http = Elm.Http.make(_elm),
+   $Json$Decode = Elm.Json.Decode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $List$Extra = Elm.List.Extra.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Task = Elm.Task.make(_elm),
+   $Urls = Elm.Urls.make(_elm);
+   var _op = {};
+   var tagView = F3(function (actionF,address,tag) {
+      return A2($Html.div,
+      _U.list([A2($Html$Events.onClick,address,actionF(tag)),$Html$Attributes.$class("tag-cont-cont")]),
+      $List$Extra.singleton(A2($Database$Tag.view,false,tag)));
+   });
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      switch (_p0.ctor)
+      {case "UpdateSuggestions": if (_p0._0.ctor === "Ok") {
+                 return $EffectsUtil.noFx(_U.update(model,{suggestions: _p0._0._0}));
+              } else {
+                 return A2($Debug.log,$Basics.toString(_p0._0._0),$EffectsUtil.noFx(model));
+              }
+         case "AddTag": var _p1 = _p0._0;
+           return A2($List.all,function (t) {    return !_U.eq(t.pk,_p1.pk);},model.selected) ? $EffectsUtil.noFx(_U.update(model,
+           {selected: A2($List._op["::"],_p1,model.selected)})) : $EffectsUtil.noFx(model);
+         default: return $EffectsUtil.noFx(_U.update(model,{selected: A2($List.filter,function (t) {    return !_U.eq(t.pk,_p0._0.pk);},model.selected)}));}
+   });
+   var RemoveTag = function (a) {    return {ctor: "RemoveTag",_0: a};};
+   var AddTag = function (a) {    return {ctor: "AddTag",_0: a};};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("tag-selector")]),
+      _U.list([$List.isEmpty(model.selected) ? A2($Html.div,_U.list([]),_U.list([])) : A2($Html.div,
+              _U.list([$Html$Attributes.$class("row tag-selector-row")]),
+              A2($List.map,A2(tagView,RemoveTag,address),$List.reverse(model.selected)))
+              ,A2($Html.div,
+              _U.list([]),
+              A2($List.map,
+              function (_p2) {
+                 var _p3 = _p2;
+                 return A2($Html.div,
+                 _U.list([$Html$Attributes.$class("row tag-selector-row")]),
+                 _U.list([A2($Html.div,_U.list([$Css.column(1)]),$List$Extra.singleton($Html.text(A2($Basics._op["++"],_p3.label,":"))))
+                         ,A2($Html.div,_U.list([$Css.column(10)]),A2($List.map,A2(tagView,AddTag,address),_p3.list))]));
+              },
+              model.suggestions))]));
+   });
+   var UpdateSuggestions = function (a) {    return {ctor: "UpdateSuggestions",_0: a};};
+   var Suggestion = F2(function (a,b) {    return {list: a,label: b};});
+   var decoder = $Json$Decode.list(A3($Json$Decode.object2,
+   Suggestion,
+   A2($Json$Decode._op[":="],"list",$Json$Decode.list($Database$Tag.decoder)),
+   A2($Json$Decode._op[":="],"label",$Json$Decode.string)));
+   var Model = F2(function (a,b) {    return {selected: a,suggestions: b};});
+   var init = {ctor: "_Tuple2"
+              ,_0: A2(Model,_U.list([]),_U.list([]))
+              ,_1: $Effects.task(A2($Task.map,UpdateSuggestions,$Task.toResult(A2($Http.get,decoder,$Urls.suggestedTags))))};
+   return _elm.TagSelector.values = {_op: _op
+                                    ,Model: Model
+                                    ,Suggestion: Suggestion
+                                    ,init: init
+                                    ,decoder: decoder
+                                    ,UpdateSuggestions: UpdateSuggestions
+                                    ,AddTag: AddTag
+                                    ,RemoveTag: RemoveTag
+                                    ,update: update
+                                    ,view: view
+                                    ,tagView: tagView};
+};
+Elm.Search = Elm.Search || {};
+Elm.Search.make = function (_elm) {
+   "use strict";
+   _elm.Search = _elm.Search || {};
+   if (_elm.Search.values) return _elm.Search.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Css = Elm.Css.make(_elm),
    $Database$Document = Elm.Database.Document.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
    $EffectsUtil = Elm.EffectsUtil.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $Http = Elm.Http.make(_elm),
    $Json$Decode = Elm.Json.Decode.make(_elm),
    $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $TagSelector = Elm.TagSelector.make(_elm),
+   $Task = Elm.Task.make(_elm),
+   $Urls = Elm.Urls.make(_elm);
+   var _op = {};
+   var TagSelectorAction = function (a) {    return {ctor: "TagSelectorAction",_0: a};};
+   var NewSearchResults = function (a) {    return {ctor: "NewSearchResults",_0: a};};
+   var getDocuments = function (model) {
+      return $Effects.task(A2($Task.map,
+      NewSearchResults,
+      $Task.toResult(A2($Http.get,
+      $Json$Decode.list($Database$Document.decoder),
+      A2($Urls.searchDocuments,model.query,A2($List.map,function (_) {    return _.pk;},model.tagSelector.selected))))));
+   };
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      switch (_p0.ctor)
+      {case "InputChange": var model$ = _U.update(model,{query: _p0._0});
+           return {ctor: "_Tuple2",_0: model$,_1: getDocuments(model$)};
+         case "NewSearchResults": if (_p0._0.ctor === "Ok") {
+                 return $EffectsUtil.noFx(_U.update(model,{documents: _p0._0._0}));
+              } else {
+                 return $EffectsUtil.noFx(A2($Debug.log,$Basics.toString(_p0._0._0),model));
+              }
+         default: var _p1 = A2($TagSelector.update,_p0._0,model.tagSelector);
+           var tagSelector = _p1._0;
+           var fx = _p1._1;
+           var model$ = _U.update(model,{tagSelector: tagSelector});
+           return {ctor: "_Tuple2",_0: model$,_1: $Effects.batch(_U.list([A2($Effects.map,TagSelectorAction,fx),getDocuments(model$)]))};}
+   });
+   var InputChange = function (a) {    return {ctor: "InputChange",_0: a};};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([]),
+      A2($Basics._op["++"],
+      _U.list([A2($Html.div,
+              _U.list([$Css.row]),
+              _U.list([A2($Html.input,
+              _U.list([$Html$Attributes.value(model.query)
+                      ,A3($Html$Events.on,"input",$Html$Events.targetValue,function (_p2) {    return A2($Signal.message,address,InputChange(_p2));})
+                      ,$Html$Attributes.$class("u-full-width search-box")]),
+              _U.list([]))]))
+              ,A2($TagSelector.view,A2($Signal.forwardTo,address,TagSelectorAction),model.tagSelector)]),
+      A2($List.map,$Database$Document.preview,model.documents)));
+   });
+   var Model = F3(function (a,b,c) {    return {query: a,documents: b,tagSelector: c};});
+   var init = function () {
+      var _p3 = $TagSelector.init;
+      var tagSelector = _p3._0;
+      var fx = _p3._1;
+      var model = A3(Model,"",_U.list([]),tagSelector);
+      return {ctor: "_Tuple2",_0: model,_1: $Effects.batch(_U.list([getDocuments(model),A2($Effects.map,TagSelectorAction,fx)]))};
+   }();
+   return _elm.Search.values = {_op: _op
+                               ,Model: Model
+                               ,init: init
+                               ,InputChange: InputChange
+                               ,NewSearchResults: NewSearchResults
+                               ,TagSelectorAction: TagSelectorAction
+                               ,update: update
+                               ,getDocuments: getDocuments
+                               ,view: view};
+};
+Elm.Index = Elm.Index || {};
+Elm.Index.make = function (_elm) {
+   "use strict";
+   _elm.Index = _elm.Index || {};
+   if (_elm.Index.values) return _elm.Index.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Css = Elm.Css.make(_elm),
+   $CustomStartApp = Elm.CustomStartApp.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
+   $EffectsUtil = Elm.EffectsUtil.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Search = Elm.Search.make(_elm),
    $SharedView = Elm.SharedView.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Task = Elm.Task.make(_elm);
    var _op = {};
    var initialData = Elm.Native.Port.make(_elm).inboundSignal("initialData",
-   "DocumentDisplay.InitalData",
+   "Index.InitalData",
    function (v) {
-      return typeof v === "object" && "documentJson" in v ? {_: {}
-                                                            ,documentJson: typeof v.documentJson === "string" || typeof v.documentJson === "object" && v.documentJson instanceof String ? v.documentJson : _U.badPort("a string",
-                                                            v.documentJson)} : _U.badPort("an object with fields `documentJson`",v);
+      return typeof v === "object" && "text" in v ? {_: {}
+                                                    ,text: typeof v.text === "string" || typeof v.text === "object" && v.text instanceof String ? v.text : _U.badPort("a string",
+                                                    v.text)} : _U.badPort("an object with fields `text`",v);
    });
-   var markdownOptions = {githubFlavored: $Maybe.Just({tables: true,breaks: false}),defaultHighlighting: $Maybe.Nothing,sanitize: true,smartypants: true};
+   var SearchAction = function (a) {    return {ctor: "SearchAction",_0: a};};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "ChangeInitialData") {
+            return $EffectsUtil.noFx(_U.update(model,{initialData: _p0._0}));
+         } else {
+            return A3($EffectsUtil.update,function (x) {    return _U.update(model,{search: x});},SearchAction,A2($Search.update,_p0._0,model.search));
+         }
+   });
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Css.container]),
       _U.list([$SharedView.header
               ,A2($Html.div,
               _U.list([$Css.row]),
-              _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("eight columns document")]),_U.list([$Markdown.toHtml(model.document.content)]))
-                      ,A2($Html.div,
-                      _U.list([$Css.column(4)]),
-                      _U.list([A2($Html.h4,_U.list([$Css.row]),_U.list([$Html.text(model.document.name)]))
-                              ,A2($Html.p,_U.list([$Css.row]),_U.list([$Html.text(model.document.description)]))
-                              ,$Database$Document.detailView(model.document)]))]))
+              _U.list([A2($Html.div,_U.list([$Css.column(6)]),_U.list([A2($Html.button,_U.list([$Css.fullWidth]),_U.list([$Html.text("traži")]))]))
+                      ,A2($Html.div,_U.list([$Css.column(6)]),_U.list([A2($Html.button,_U.list([$Css.fullWidth]),_U.list([$Html.text("dodaj")]))]))]))
+              ,A2($Search.view,A2($Signal.forwardTo,address,SearchAction),model.search)
               ,$SharedView.footer]));
-   });
-   var update = F2(function (action,model) {
-      var _p0 = action;
-      var _p2 = _p0._0;
-      return $EffectsUtil.noFx(_U.update(model,
-      {initialData: _p2
-      ,document: function () {
-         var _p1 = A2($Json$Decode.decodeString,$Database$Document.decoder,_p2.documentJson);
-         if (_p1.ctor === "Ok") {
-               return _p1._0;
-            } else {
-               return A2($Debug.log,$Basics.toString(_p1._0),$Database$Document.empty);
-            }
-      }()}));
    });
    var ChangeInitialData = function (a) {    return {ctor: "ChangeInitialData",_0: a};};
    var inputs = _U.list([A2($Signal.map,ChangeInitialData,initialData)]);
-   var InitalData = function (a) {    return {documentJson: a};};
-   var Model = F2(function (a,b) {    return {initialData: a,document: b};});
-   var init = $EffectsUtil.noFx(A2(Model,InitalData(""),$Database$Document.empty));
+   var InitalData = function (a) {    return {text: a};};
+   var Model = F2(function (a,b) {    return {initialData: a,search: b};});
+   var init = A3($EffectsUtil.update,function (x) {    return A2(Model,InitalData("placehold"),x);},SearchAction,$Search.init);
    var init$ = function () {
-      var update$ = F2(function (action,_p3) {
-         var _p4 = _p3;
-         var _p5 = A2(update,action,_p4._0);
-         var model$ = _p5._0;
-         var fx$ = _p5._1;
-         return {ctor: "_Tuple2",_0: model$,_1: $Effects.batch(_U.list([_p4._1,fx$]))};
+      var update$ = F2(function (action,_p1) {
+         var _p2 = _p1;
+         var _p3 = A2(update,action,_p2._0);
+         var model$ = _p3._0;
+         var fx$ = _p3._1;
+         return {ctor: "_Tuple2",_0: model$,_1: $Effects.batch(_U.list([_p2._1,fx$]))};
       });
       return A2($List.foldr,update$,init);
    }();
    var app = $CustomStartApp.start({init: init$,update: update,view: view,inputs: inputs});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
-   return _elm.DocumentDisplay.values = {_op: _op
-                                        ,Model: Model
-                                        ,InitalData: InitalData
-                                        ,init: init
-                                        ,ChangeInitialData: ChangeInitialData
-                                        ,update: update
-                                        ,view: view
-                                        ,markdownOptions: markdownOptions
-                                        ,inputs: inputs
-                                        ,init$: init$
-                                        ,app: app
-                                        ,main: main};
+   return _elm.Index.values = {_op: _op
+                              ,Model: Model
+                              ,InitalData: InitalData
+                              ,init: init
+                              ,ChangeInitialData: ChangeInitialData
+                              ,SearchAction: SearchAction
+                              ,update: update
+                              ,view: view
+                              ,inputs: inputs
+                              ,init$: init$
+                              ,app: app
+                              ,main: main};
 };

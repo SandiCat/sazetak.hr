@@ -26,3 +26,11 @@ docsWithTag pk =
 suggestedTags: String
 suggestedTags =
     "/suggested_tags"
+
+index: String
+index =
+    "/"
+
+addForm: String
+addForm =
+    "/add_form"

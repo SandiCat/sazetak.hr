@@ -12984,6 +12984,8 @@ Elm.Urls.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var addForm = "/add_form";
+   var index = "/";
    var suggestedTags = "/suggested_tags";
    var docsWithTag = function (pk) {    return A2($Basics._op["++"],"/docs_with_tag/",$Basics.toString(pk));};
    var document = function (pk) {    return A2($Basics._op["++"],"/document/",$Basics.toString(pk));};
@@ -12993,7 +12995,14 @@ Elm.Urls.make = function (_elm) {
       A2($Basics._op["++"],query,A2($Basics._op["++"],"/",A2($String.join,",",A2($List.map,$Basics.toString,tagPks)))));
    });
    var image = function (s) {    return A2($Basics._op["++"],"/static/img/",s);};
-   return _elm.Urls.values = {_op: _op,image: image,searchDocuments: searchDocuments,document: document,docsWithTag: docsWithTag,suggestedTags: suggestedTags};
+   return _elm.Urls.values = {_op: _op
+                             ,image: image
+                             ,searchDocuments: searchDocuments
+                             ,document: document
+                             ,docsWithTag: docsWithTag
+                             ,suggestedTags: suggestedTags
+                             ,index: index
+                             ,addForm: addForm};
 };
 Elm.Database = Elm.Database || {};
 Elm.Database.Tag = Elm.Database.Tag || {};
@@ -13194,11 +13203,23 @@ Elm.SharedView.make = function (_elm) {
                    _U.list([$Html$Attributes.href("/")]),
                    _U.list([A2($Html.img,_U.list([$Html$Attributes.src($Urls.image("logo.svg")),$Css.columnImage]),_U.list([]))]))]))
                    ,A2($Html.div,
-                   _U.list([$Css.column(8)]),
+                   _U.list([$Css.column(10)]),
                    _U.list([A2($Html.h1,
                    _U.list([$Html$Attributes.id("title")]),
                    _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/"),$Html$Attributes.$class("link")]),_U.list([$Html.text("SAŽETAK.hr")]))]))]))]))
-           ,A2($Html.hr,_U.list([]),_U.list([]))]));
+           ,A2($Html.div,
+           _U.list([$Css.row]),
+           _U.list([A2($Html.div,
+                   _U.list([$Css.column(6)]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.$class("u-full-width button"),$Html$Attributes.href($Urls.index)]),
+                   _U.list([$Html.text("traži")]))]))
+                   ,A2($Html.div,
+                   _U.list([$Css.column(6)]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.$class("u-full-width button"),$Html$Attributes.href($Urls.addForm)]),
+                   _U.list([$Html.text("dodaj")]))]))]))
+           ,A2($Html.hr,_U.list([$Html$Attributes.id("header-line")]),_U.list([]))]));
    return _elm.SharedView.values = {_op: _op,header: header,footer: footer};
 };
 Elm.TagSelector = Elm.TagSelector || {};
@@ -13409,13 +13430,7 @@ Elm.Index.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Css.container]),
-      _U.list([$SharedView.header
-              ,A2($Html.div,
-              _U.list([$Css.row]),
-              _U.list([A2($Html.div,_U.list([$Css.column(6)]),_U.list([A2($Html.button,_U.list([$Css.fullWidth]),_U.list([$Html.text("traži")]))]))
-                      ,A2($Html.div,_U.list([$Css.column(6)]),_U.list([A2($Html.button,_U.list([$Css.fullWidth]),_U.list([$Html.text("dodaj")]))]))]))
-              ,A2($Search.view,A2($Signal.forwardTo,address,SearchAction),model.search)
-              ,$SharedView.footer]));
+      _U.list([$SharedView.header,A2($Search.view,A2($Signal.forwardTo,address,SearchAction),model.search),$SharedView.footer]));
    });
    var ChangeInitialData = function (a) {    return {ctor: "ChangeInitialData",_0: a};};
    var inputs = _U.list([A2($Signal.map,ChangeInitialData,initialData)]);
