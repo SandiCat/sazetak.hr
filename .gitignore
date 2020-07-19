@@ -3,3 +3,6 @@ other/
 sazetak_baza/main_app/__pycache__/
 sazetak_baza/sazetak_baza/__pycache__/
 sazetak_baza/.idea/
+whoosh_index/
+.fuse*
+db.sqlite3

@@ -13425,24 +13425,6 @@ Elm.AddForm.make = function (_elm) {
       _U.list([$Css.row]),
       _U.list([A2($Html.h5,_U.list([$Css.column(2)]),_U.list([$Html.text(label)])),A2($Html.div,_U.list([$Css.column(10)]),_U.list([input]))]));
    });
-   var view = F2(function (address,model) {
-      return A2($Html.div,
-      _U.list([$Css.container]),
-      _U.list([$SharedView.header
-              ,A2($Html.form,
-              _U.list([$Html$Attributes.action($Urls.postDocument),$Html$Attributes.method("post"),$Html$Attributes.id("document-form")]),
-              _U.list([A2(twoColumn,"Ime:",A2($Html.input,_U.list([$Html$Attributes.type$("text"),$Html$Attributes.name("name"),$Css.fullWidth]),_U.list([])))
-                      ,A2(twoColumn,
-                      "Opis:",
-                      A2($Html.textarea,_U.list([$Html$Attributes.name("description"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
-                      ,A2(twoColumn,
-                      "Sadržaj:",
-                      A2($Html.textarea,_U.list([$Html$Attributes.name("content"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
-                      ,A2($Html.input,
-                      _U.list([$Html$Attributes.type$("submit"),$Html$Attributes.$class("button-primary"),$Html$Attributes.value("Objavi")]),
-                      _U.list([]))]))
-              ,$SharedView.footer]));
-   });
    var TagSelectorAction = function (a) {    return {ctor: "TagSelectorAction",_0: a};};
    var update = F2(function (action,model) {
       var _p0 = action;
@@ -13456,6 +13438,25 @@ Elm.AddForm.make = function (_elm) {
             TagSelectorAction,
             A2($TagSelector.update,_p0._0,model.tagSelector));
          }
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Css.container]),
+      _U.list([$SharedView.header
+              ,A2($Html.form,
+              _U.list([$Html$Attributes.action($Urls.postDocument),$Html$Attributes.method("post"),$Html$Attributes.id("document-form")]),
+              _U.list([A2(twoColumn,"Ime:",A2($Html.input,_U.list([$Html$Attributes.type$("text"),$Html$Attributes.name("name"),$Css.fullWidth]),_U.list([])))
+                      ,A2(twoColumn,
+                      "Opis:",
+                      A2($Html.textarea,_U.list([$Html$Attributes.name("description"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
+                      ,A2(twoColumn,
+                      "Sadržaj:",
+                      A2($Html.textarea,_U.list([$Html$Attributes.name("content"),$Html$Attributes.form("document-form"),$Css.fullWidth]),_U.list([])))
+                      ,A2(twoColumn,"Tagovi:",A2($TagSelector.view,A2($Signal.forwardTo,address,TagSelectorAction),model.tagSelector))
+                      ,A2($Html.input,
+                      _U.list([$Html$Attributes.type$("submit"),$Html$Attributes.$class("button-primary"),$Html$Attributes.value("Objavi")]),
+                      _U.list([]))]))
+              ,$SharedView.footer]));
    });
    var ChangeInitialData = function (a) {    return {ctor: "ChangeInitialData",_0: a};};
    var inputs = _U.list([A2($Signal.map,ChangeInitialData,initialData)]);

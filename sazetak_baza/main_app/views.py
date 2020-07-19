@@ -2,10 +2,12 @@ from . import elm
 from haystack import query
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
-from .models import Document, Tag
+from .models import Document, Tag, Author
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.core.urlresolvers import reverse
+import datetime
+from haystack.management.commands import update_index
 
 
 def index(request):
@@ -18,7 +20,17 @@ def add_form(request):
 
 @csrf_exempt
 def post_document(request):
-    return HttpResponseRedirect(reverse("name"))
+    doc = Document(
+        name=request.POST["name"],
+        description=request.POST["description"],
+        content=request.POST["content"],
+        date_added=datetime.datetime.now(),
+        rating=0.5,
+        author=Author.objects.all()[0],
+    )
+    doc.save()
+    update_index.Command().handle()
+    return HttpResponseRedirect(reverse("index"))
 
 
 def document_display(request, pk):

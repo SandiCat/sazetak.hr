@@ -70,6 +70,8 @@ view address model =
                 |> twoColumn "Opis:"
             , Html.textarea [ Att.name "content", Att.form "document-form", Css.fullWidth ] []
                 |> twoColumn "Sadržaj:"
+            , TagSelector.view (Signal.forwardTo address TagSelectorAction) model.tagSelector
+                |> twoColumn "Tagovi:"
             , Html.input [ Att.type' "submit", Att.class "button-primary", Att.value "Objavi"] []
             ] 
         , SharedView.footer
